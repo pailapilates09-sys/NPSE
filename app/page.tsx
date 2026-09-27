@@ -128,8 +128,8 @@ export default function Home() {
       <section className="metrics">
         <Metric label="NEPSE" value={data.market.index == null ? "—" : fmt.format(data.market.index)} sub={pct(data.market.percent_change)} />
         <Metric label="Turnover" value={data.market.turnover == null ? "—" : `Rs ${compact.format(data.market.turnover)}`} sub={`${pct(data.market.turnover_vs_20d_pct)} vs 20-session avg`} />
-        <Metric label="Breadth" value={`${data.breadth.advancers} ↑ / ${data.breadth.decliners} ↓`} sub={`${data.breadth.unchanged} unchanged · ${totalBreadth} observed`} />
-        <Metric label="Scrips traded" value={data.market.traded_scrips == null ? "—" : fmt.format(data.market.traded_scrips)} sub={`A/D ratio ${data.breadth.ratio == null ? "—" : data.breadth.ratio.toFixed(2)}`} />
+        <Metric label="All-scrip breadth" value={`${data.breadth.advancers} ↑ / ${data.breadth.decliners} ↓`} sub={`${data.breadth.unchanged} unchanged · ${totalBreadth} upstream traded scrips`} />
+        <Metric label="Scrips traded" value={data.market.traded_scrips == null ? "—" : fmt.format(data.market.traded_scrips)} sub={`All-scrip A/D ratio ${data.breadth.ratio == null ? "—" : data.breadth.ratio.toFixed(2)}`} />
       </section>
 
       <section className="grid two">
@@ -193,7 +193,7 @@ export default function Home() {
         <div><b>Retrieved</b><span>{new Date(data.provenance.retrieved_at).toLocaleString()}</span></div>
         <div><b>Upstream</b><span>{data.provenance.upstream}</span></div>
       </footer>
-      <p className="disclaimer">Research dashboard only. Source freshness and discrepancies must be checked before relying on any figure. This system does not place trades.</p>
+      <p className="disclaimer">Research dashboard only. The breadth metric currently counts every traded scrip returned by the upstream adapter, so it is not directly comparable with media reports that count listed companies only. Source freshness and discrepancies must be checked before relying on any figure. This system does not place trades.</p>
     </main>
   );
 }
