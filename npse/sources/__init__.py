@@ -1,0 +1,1 @@
+"""Upstream market data adapters."""
