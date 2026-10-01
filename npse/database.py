@@ -80,6 +80,21 @@ def import_observations(rows):
     return len(validated)
 
 
+def persist_history(batch):
+    """Insert secondary historical sessions without replacing existing provider records."""
+    from .evidence import timestamp
+    counts = []
+    with connect() as c:
+        for result in batch["results"]:
+            rows = result["rows"]
+            if rows:
+                with c.cursor() as cursor:
+                    cursor.executemany("INSERT INTO daily_ohlcv(symbol,session_date,observed_at,high,low,close,volume,turnover,source_url) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT(symbol,session_date) DO NOTHING",
+                        [(r["symbol"],r["date"],timestamp(r["observed_at"]),r["high"],r["low"],r["close"],r["volume"],r["turnover"],r["source_url"]) for r in rows])
+            counts.append({k:v for k,v in result.items() if k != "rows"} | {"sessions_checked":len(rows)})
+    return counts
+
+
 def save_snapshot(board):
     from hashlib import sha256
     from psycopg.types.json import Jsonb

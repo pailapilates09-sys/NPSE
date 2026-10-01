@@ -49,7 +49,9 @@ def build_research(market_feed=None, inputs=None, now=None):
         "companies":results,"sectors":[{"slug":s,"name":name,"registered":sum(c["sector"]==s for c in results),"top3":rank([c for c in results if c["sector"]==s])} for s,name in SECTOR_NAMES.items()],
         "sources":SOURCES,"market_transports":feed.get("transports",[]),"discrepancies":[d for c in results for d in c["discrepancies"]],
         "config":{"weights":WEIGHTS,"gates":GATES,"scenarios":SCENARIOS},
-        "alerts":["Authoritative financial ingestion and Postgres connection must pass before a positive ranking."] + (["Market observations are stale or unavailable."] if fresh is None or fresh>GATES["market_age_days"] else []),
+        "alerts":(["The research database is not connected."] if not db["connected"] else []) +
+            [f"Primary financial evidence available for {sum(any(v.get('source_type') != 'secondary' for v in c['selected_evidence'].values()) for c in results)} of {len(results)} companies. Rankings remain unavailable until financials, current-price confirmation, comparable peers and historical adjustments pass."] +
+            (["Market observations are stale or unavailable."] if fresh is None or fresh>GATES["market_age_days"] else []),
         "backtest":{"status":"INSUFFICIENT POINT-IN-TIME HISTORY","sample_size":0,"period":None,"returns":None,"drawdown":None,"hit_rate":None,
             "methodology":"Walk-forward ranking using only published and retrieved observations available at each rebalance, adjusted prices, fixed weights and explicit trading costs.",
             "limitations":["No complete point-in-time filing archive or adjusted total-return panel connected", "Survivorship, corporate-action adjustments and transaction costs must be validated before performance claims"]}}

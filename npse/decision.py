@@ -73,7 +73,9 @@ def evaluate(company, sector_peers, now=None):
     if not financial_fresh: reasons.append("Financial reporting is stale or unverified")
     if quality is None: reasons.append("Comparable sector history/peer coverage is inadequate")
     if valuation["base"] is None: reasons.append("Two supported valuation methods are required")
-    if len(closes) < GATES["min_history"]: reasons.append("Fewer than 50 verified price sessions")
+    if len(closes) < GATES["min_history"]: reasons.append("Fewer than 50 observed price sessions")
+    if any("Aabishkar2/nepse-data/" in p.get("source_url", "") and p.get("adjusted_close") is None for p in history):
+        reasons.append("Historical prices are secondary and corporate-action adjustments are unverified")
     if metrics.get("turnover_20d") is None or metrics["turnover_20d"] < GATES["min_turnover_20d"]: reasons.append("20-session liquidity threshold not met")
     if confidence < GATES["confidence"]: reasons.append("Data confidence below 75/100")
     state = "INSUFFICIENT DATA"

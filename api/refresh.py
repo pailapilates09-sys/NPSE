@@ -17,6 +17,8 @@ class handler(ResearchHandler):
             feed=fetch_market()
             board=build_research(market_feed=feed)
             database.persist_market(board["companies"],feed,feed["url"],feed["retrieved_at"])
-            self.send_json(200,{"snapshot_id":database.save_snapshot(build_research(market_feed=feed))})
+            from npse.sources.history import fetch_history
+            history = database.persist_history(fetch_history())
+            self.send_json(200,{"snapshot_id":database.save_snapshot(build_research(market_feed=feed)),"history":history})
         except Exception:
             self.send_json(503,{"error":"refresh_failed"})

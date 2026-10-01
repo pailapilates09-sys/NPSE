@@ -12,6 +12,8 @@ SOURCES = [
  {"name":"Nepal Insurance Authority", "type":"insurance regulator", "url":"https://nia.gov.np", "status":"Validated report admission available"},
  {"name":"Company audited and quarterly filings", "type":"primary financial authority", "url":None, "status":"Per-value evidence required; no silently invented ratios"},
  {"name":"YONEPSE", "type":"secondary market discovery", "url":"https://shubhamnpk.github.io/yonepse", "status":"Market adapter active; GitHub origin fallback when Pages is stale"},
+ {"name":"Aabishkar2 / nepse-data", "type":"secondary daily price history", "url":"https://github.com/Aabishkar2/nepse-data", "status":"Historical CSV adapter available; admitted coverage shown by company. Unadjusted prices, not independent current-price confirmation"},
+ {"name":"SocrateAI / nepse-open-data", "type":"secondary adjusted/unadjusted archive", "url":"https://github.com/socrateai-official/nepse-open-data", "status":"Repository inspected; adjusted-series adapter not connected or validated"},
  {"name":"ShareSansar", "type":"secondary verification/discovery", "url":"https://www.sharesansar.com", "status":"Research citations; market/financial adapter not connected"},
  {"name":"MeroLagani", "type":"secondary verification/discovery", "url":"https://merolagani.com", "status":"Not connected"},
  {"name":"NepseAlpha", "type":"secondary verification/discovery", "url":"https://nepsealpha.com", "status":"Not connected"},

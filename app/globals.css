@@ -109,5 +109,7 @@ button { cursor:pointer; } button:disabled { cursor:default; }
 .pagination button:disabled { color:#64748b; background:var(--panel-2); }
 .sector-tile:hover { border-color:var(--accent); text-decoration:none; background:#f0fdfa; }
 .research-card p.small { font-size:13px; }
+.evidence-overview td,.evidence-overview th { text-align:left; }
+.evidence-overview { min-width:920px; }
 @media(max-width:900px) { .main-nav { align-items:flex-start; flex-direction:column; gap:16px; } .health-strip { grid-template-columns:1fr 1fr; } }
 @media(max-width:600px) { .health-strip { grid-template-columns:1fr; } .health-strip div { border-right:0; border-bottom:1px solid var(--line); } .research-stats { grid-template-columns:1fr 1fr; } .candidate-heading { flex-direction:column; } .research-card { padding:18px; } .section-head { flex-wrap:wrap; } .main-nav div { gap:15px; } }
