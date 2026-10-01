@@ -18,3 +18,8 @@ class HistoryTests(unittest.TestCase):
         r=evaluate(c,[],NOW)
         self.assertFalse(r["eligible"])
         self.assertTrue(any("corporate-action" in gap for gap in r["gate_reasons"]))
+    def test_intraday_partial_session_excluded_from_daily_liquidity(self):
+        c=bank()
+        before=evaluate(c,[],NOW)["metrics"]["turnover_20d"]
+        c["price_history"].append({"date":"2026-10-01","close":999,"turnover":999_000_000})
+        self.assertEqual(evaluate(c,[],NOW)["metrics"]["turnover_20d"],before)

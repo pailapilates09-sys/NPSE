@@ -1,5 +1,6 @@
 from statistics import mean
 from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 from .config import GATES, WEIGHTS
 from .models import MODELS
 from .models.common import number, percentile, normalize_metrics
@@ -12,7 +13,8 @@ def evaluate(company, sector_peers, now=None):
     selected, discrepancies, rejected = resolve(company.get("observations", []), now.isoformat() if now else None)
     market = company.get("market", {})
     metrics = normalize_metrics({k:v["value"] for k,v in selected.items()}, market.get("price"))
-    history = sorted((p for p in company.get("price_history", []) if now is None or p["date"] <= now.date().isoformat()), key=lambda p:p["date"])
+    closed_before = now.astimezone(ZoneInfo("Asia/Kathmandu")).date().isoformat() if now else None
+    history = sorted((p for p in company.get("price_history", []) if closed_before is None or p["date"] < closed_before), key=lambda p:p["date"])
     closes = [p["close"] for p in history if number(p.get("close")) is not None and (now is None or p["date"] <= now.date().isoformat())]
     turnovers = [p["turnover"] for p in history[-20:] if number(p.get("turnover")) is not None]
     metrics["turnover_20d"] = mean(turnovers) if len(turnovers) == 20 else None

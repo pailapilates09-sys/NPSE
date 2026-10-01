@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 from copy import deepcopy
 from statistics import mean
+from zoneinfo import ZoneInfo
 from .config import VERSION, SECTOR_NAMES, WEIGHTS, GATES, SCENARIOS
 from .sources.registry import UNIVERSE, SOURCES
 from .sources.market import fetch_market
@@ -35,7 +36,8 @@ def build_research(market_feed=None, inputs=None, now=None):
         if official_price.get("source_type") == "nepse" and official_price.get("market_timestamp") and official_price["value"] > 0:
             c["market"].update({"price":official_price["value"], "observed_at":official_price["market_timestamp"], "source":official_price["source"], "source_type":"nepse", "source_url":official_price["source_url"], "retrieved_at":official_price["retrieved_at"], "verified":True})
         c["metrics"] = normalize_metrics({k:v["value"] for k,v in selected.items()},c["market"]["price"])
-        c["price_history"] = sorted((p for p in c["price_history"] if p["date"] <= now.date().isoformat()),key=lambda p:p["date"])
+        closed_before = now.astimezone(ZoneInfo("Asia/Kathmandu")).date().isoformat()
+        c["price_history"] = sorted((p for p in c["price_history"] if p["date"] < closed_before),key=lambda p:p["date"])
         turns = [p["turnover"] for p in c["price_history"][-20:] if p.get("turnover") is not None]
         c["metrics"]["turnover_20d"] = mean(turns) if len(turns)==20 else None
     results = [evaluate(c,[p for p in companies if p["sector"]==c["sector"]],now) for c in companies]
