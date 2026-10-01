@@ -113,3 +113,5 @@ button { cursor:pointer; } button:disabled { cursor:default; }
 .evidence-overview { min-width:920px; }
 @media(max-width:900px) { .main-nav { align-items:flex-start; flex-direction:column; gap:16px; } .health-strip { grid-template-columns:1fr 1fr; } }
 @media(max-width:600px) { .health-strip { grid-template-columns:1fr; } .health-strip div { border-right:0; border-bottom:1px solid var(--line); } .research-stats { grid-template-columns:1fr 1fr; } .candidate-heading { flex-direction:column; } .research-card { padding:18px; } .section-head { flex-wrap:wrap; } .main-nav div { gap:15px; } }
+
+.focus-card .research-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.focus-card h2{font-size:2rem}.screen-method{margin:1rem 0}.multiple-control{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;margin:1.5rem 0}.multiple-control input{width:220px;accent-color:var(--accent)}.section-head select{padding:.65rem;border:1px solid #cbd5e1;border-radius:.5rem;background:white;color:#172334;font:inherit}.decision-shell details>summary{cursor:pointer;font-weight:600;padding:.5rem 0}

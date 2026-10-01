@@ -47,6 +47,9 @@ class handler(BaseHTTPRequestHandler):
             elif action=="backfill":
                 from npse.sources.history import fetch_history
                 self.send_json(200,{"history":database.persist_history(fetch_history(data.get("symbols")))})
+            elif action=="archive":
+                from npse.sources.archive import fetch_archive
+                self.send_json(200,{"admitted":database.import_observations(fetch_archive())})
             elif action=="refresh":
                 from npse.sources.market import fetch_market
                 from npse.sources.registry import UNIVERSE

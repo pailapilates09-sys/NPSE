@@ -1,0 +1,1033 @@
+{
+  "prepared_at": "2026-10-01T07:43:26.005675+00:00",
+  "reports": [
+    {
+      "source": "Nepal Rastra Bank \u2014 nrb-banks",
+      "source_type": "nrb",
+      "source_url": "https://www.nrb.org.np/bsd/2082-83-mid-july-2026/",
+      "published_at": "2026-09-17T00:00:00+05:45",
+      "retrieved_at": "2026-10-01T07:43:26.005675+00:00",
+      "period_end": "2026-07-16",
+      "reported_period": "2082/83 Asadh end \u2014 provisional regulatory basis",
+      "basis": "Amounts: NPR million converted to NPR. Percentages divided by 100. Microfinance regulatory ROE uses core capital, not accounting equity; it is kept separate from accounting ROE. Regulatory figures can differ from NFRS filings.",
+      "payload_sha256": "0823f3d493f12342908a7bf4ee7d9ce4d51bef0319dc1262a639bd12377e4300",
+      "companies": [
+        {
+          "symbol": "NBL",
+          "reported_name": "Nepal Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1366,
+            "npl": 0.0418,
+            "deposits": 416383000000.0,
+            "loans": 261771000000.0,
+            "interest_spread": 0.0354,
+            "regulatory_net_npl": 0.0098
+          }
+        },
+        {
+          "symbol": "ADBL",
+          "reported_name": "Agriculture Development Bank",
+          "metrics": {
+            "capital_adequacy": 0.1311,
+            "npl": 0.0407,
+            "deposits": 347502000000.0,
+            "loans": 245794000000.0,
+            "interest_spread": 0.0366,
+            "regulatory_net_npl": 0.0083
+          }
+        },
+        {
+          "symbol": "NABIL",
+          "reported_name": "Nabil Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.12369999999999999,
+            "npl": 0.042,
+            "deposits": 601927000000.0,
+            "loans": 487981000000.0,
+            "interest_spread": 0.0318,
+            "regulatory_net_npl": 0.0044
+          }
+        },
+        {
+          "symbol": "NIMB",
+          "reported_name": "Nepal Investment Mega Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.12269999999999999,
+            "npl": 0.0866,
+            "deposits": 529160000000.0,
+            "loans": 360731000000.0,
+            "interest_spread": 0.0315,
+            "regulatory_net_npl": 0.015600000000000001
+          }
+        },
+        {
+          "symbol": "SCB",
+          "reported_name": "Standard Chartered Bank Nepal Limited",
+          "metrics": {
+            "capital_adequacy": 0.1813,
+            "npl": 0.0203,
+            "deposits": 149992000000.0,
+            "loans": 70860000000.0,
+            "interest_spread": 0.0377,
+            "regulatory_net_npl": 0.0039000000000000003
+          }
+        },
+        {
+          "symbol": "HBL",
+          "reported_name": "Himalayan Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.11689999999999999,
+            "npl": 0.0796,
+            "deposits": 356686000000.0,
+            "loans": 256584000000.0,
+            "interest_spread": 0.028300000000000002,
+            "regulatory_net_npl": 0.0088
+          }
+        },
+        {
+          "symbol": "SBI",
+          "reported_name": "Nepal SBI Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1374,
+            "npl": 0.0292,
+            "deposits": 212749000000.0,
+            "loans": 153108000000.0,
+            "interest_spread": 0.0321,
+            "regulatory_net_npl": 0.0051
+          }
+        },
+        {
+          "symbol": "EBL",
+          "reported_name": "Everest Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1215,
+            "npl": 0.0049,
+            "deposits": 318377000000.0,
+            "loans": 247657000000.0,
+            "interest_spread": 0.0305,
+            "regulatory_net_npl": 0.0017000000000000001
+          }
+        },
+        {
+          "symbol": "NICA",
+          "reported_name": "NIC ASIA Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.111,
+            "npl": 0.0926,
+            "deposits": 345723000000.0,
+            "loans": 211128000000.0,
+            "interest_spread": 0.035,
+            "regulatory_net_npl": 0.005699999999999999
+          }
+        },
+        {
+          "symbol": "MBL",
+          "reported_name": "Machhapuchhre Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1321,
+            "npl": 0.0398,
+            "deposits": 222096000000.0,
+            "loans": 171253000000.0,
+            "interest_spread": 0.0348,
+            "regulatory_net_npl": 0.011399999999999999
+          }
+        },
+        {
+          "symbol": "KBL",
+          "reported_name": "Kumari Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1355,
+            "npl": 0.0746,
+            "deposits": 412717000000.0,
+            "loans": 302386000000.0,
+            "interest_spread": 0.0311,
+            "regulatory_net_npl": 0.0194
+          }
+        },
+        {
+          "symbol": "LSL",
+          "reported_name": "Laxmi Sunrise Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.12029999999999999,
+            "npl": 0.052300000000000006,
+            "deposits": 428728000000.0,
+            "loans": 321014000000.0,
+            "interest_spread": 0.0322,
+            "regulatory_net_npl": 0.0111
+          }
+        },
+        {
+          "symbol": "SBL",
+          "reported_name": "Siddhartha Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1319,
+            "npl": 0.0353,
+            "deposits": 331494000000.0,
+            "loans": 248125000000.0,
+            "interest_spread": 0.0369,
+            "regulatory_net_npl": 0.0106
+          }
+        },
+        {
+          "symbol": "GBIME",
+          "reported_name": "Global IME Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.121,
+            "npl": 0.0496,
+            "deposits": 700441000000.0,
+            "loans": 476840000000.0,
+            "interest_spread": 0.0329,
+            "regulatory_net_npl": 0.0059
+          }
+        },
+        {
+          "symbol": "CZBIL",
+          "reported_name": "Citizens Bank International Limited",
+          "metrics": {
+            "capital_adequacy": 0.1247,
+            "npl": 0.0588,
+            "deposits": 233818000000.0,
+            "loans": 177332000000.0,
+            "interest_spread": 0.0348,
+            "regulatory_net_npl": 0.015600000000000001
+          }
+        },
+        {
+          "symbol": "PCBL",
+          "reported_name": "Prime Commercial Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.12869999999999998,
+            "npl": 0.0669,
+            "deposits": 283340000000.0,
+            "loans": 244597000000.0,
+            "interest_spread": 0.0366,
+            "regulatory_net_npl": 0.0217
+          }
+        },
+        {
+          "symbol": "NMB",
+          "reported_name": "NMB Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1273,
+            "npl": 0.049100000000000005,
+            "deposits": 317975000000.0,
+            "loans": 267955000000.0,
+            "interest_spread": 0.034300000000000004,
+            "regulatory_net_npl": 0.0166
+          }
+        },
+        {
+          "symbol": "PRVU",
+          "reported_name": "Prabhu Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.1183,
+            "npl": 0.1555,
+            "deposits": 353235000000.0,
+            "loans": 232190000000.0,
+            "interest_spread": 0.032799999999999996,
+            "regulatory_net_npl": 0.0621
+          }
+        },
+        {
+          "symbol": "SANIMA",
+          "reported_name": "Sanima Bank Limited",
+          "metrics": {
+            "capital_adequacy": 0.131,
+            "npl": 0.0287,
+            "deposits": 249930000000.0,
+            "loans": 206522000000.0,
+            "interest_spread": 0.0339,
+            "regulatory_net_npl": 0.0070999999999999995
+          }
+        }
+      ]
+    },
+    {
+      "source": "Nepal Rastra Bank \u2014 nrb-micro",
+      "source_type": "nrb",
+      "source_url": "https://www.nrb.org.np/mfd/key-financial-indicators-of-microfinance-institutions-as-on-asar-end-2083/",
+      "published_at": "2026-09-22T00:00:00+05:45",
+      "retrieved_at": "2026-10-01T07:43:26.005675+00:00",
+      "period_end": "2026-07-16",
+      "reported_period": "2082/83 Asadh end \u2014 provisional regulatory basis",
+      "basis": "Amounts: NPR million converted to NPR. Percentages divided by 100. Microfinance regulatory ROE uses core capital, not accounting equity; it is kept separate from accounting ROE. Regulatory figures can differ from NFRS filings.",
+      "payload_sha256": "e9f142145a107ac077651592b1f3e7ffe9c0e27f16e49ad714e93c8dd6e822a5",
+      "companies": [
+        {
+          "symbol": "SKBBL",
+          "reported_name": "Sanakisan LBSL",
+          "metrics": {
+            "capital_adequacy": 0.17350000000000002,
+            "npl": 0.0296,
+            "deposits": 6626510000.0,
+            "loans": 36947410000.0,
+            "net_profit": 653150000.0,
+            "regulatory_roa": 0.0149,
+            "regulatory_roe": 0.0726,
+            "base_rate": 0.0368
+          }
+        },
+        {
+          "symbol": "FMDBL",
+          "reported_name": "First Microfinance LBSL",
+          "metrics": {
+            "capital_adequacy": 0.3554,
+            "npl": 0.0288,
+            "deposits": 0.0,
+            "loans": 4844590000.0,
+            "net_profit": 190730000.0,
+            "regulatory_roa": 0.0319,
+            "regulatory_roe": 0.1045,
+            "base_rate": 0.06480000000000001
+          }
+        },
+        {
+          "symbol": "RSDC",
+          "reported_name": "RSDC LBSL",
+          "metrics": {
+            "capital_adequacy": 0.27699999999999997,
+            "npl": 0.0392,
+            "deposits": 0.0,
+            "loans": 4416620000.0,
+            "net_profit": 137610000.0,
+            "regulatory_roa": 0.0233,
+            "regulatory_roe": 0.10400000000000001,
+            "base_rate": 0.0552
+          }
+        },
+        {
+          "symbol": "NUBL",
+          "reported_name": "Nirdhan Uththan LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1211,
+            "npl": 0.128,
+            "deposits": 22644080000.0,
+            "loans": 29256370000.0,
+            "net_profit": 350980000.0,
+            "regulatory_roa": 0.009399999999999999,
+            "regulatory_roe": 0.09269999999999999,
+            "base_rate": 0.1246
+          }
+        },
+        {
+          "symbol": "DDBL",
+          "reported_name": "DEPROSC LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1496,
+            "npl": 0.0649,
+            "deposits": 12972270000.0,
+            "loans": 27653080000.0,
+            "net_profit": 995780000.0,
+            "regulatory_roa": 0.0311,
+            "regulatory_roe": 0.2425,
+            "base_rate": 0.1074
+          }
+        },
+        {
+          "symbol": "CBBL",
+          "reported_name": "Chhimek LBSL",
+          "metrics": {
+            "capital_adequacy": 0.17010000000000003,
+            "npl": 0.023,
+            "deposits": 44796340000.0,
+            "loans": 46945830000.0,
+            "net_profit": 1269570000.0,
+            "regulatory_roa": 0.021,
+            "regulatory_roe": 0.1564,
+            "base_rate": 0.1162
+          }
+        },
+        {
+          "symbol": "SWBBL",
+          "reported_name": "Swabhalamban LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1164,
+            "npl": 0.0892,
+            "deposits": 18086380000.0,
+            "loans": 27901050000.0,
+            "net_profit": 649160000.0,
+            "regulatory_roa": 0.019299999999999998,
+            "regulatory_roe": 0.21359999999999998,
+            "base_rate": 0.12
+          }
+        },
+        {
+          "symbol": "NMLBBL",
+          "reported_name": "Nerude Mirmire LBSL",
+          "metrics": {
+            "capital_adequacy": 0.056299999999999996,
+            "npl": 0.1986,
+            "deposits": 7696730000.0,
+            "loans": 20710940000.0,
+            "net_profit": -337520000.0,
+            "regulatory_roa": -0.0138,
+            "regulatory_roe": -0.3608,
+            "base_rate": 0.12119999999999999
+          }
+        },
+        {
+          "symbol": "MLBBL",
+          "reported_name": "Mithila LBSL",
+          "metrics": {
+            "capital_adequacy": 0.115,
+            "npl": 0.0989,
+            "deposits": 1303250000.0,
+            "loans": 3096230000.0,
+            "net_profit": 23580000.0,
+            "regulatory_roa": 0.0063,
+            "regulatory_roe": 0.0661,
+            "base_rate": 0.11470000000000001
+          }
+        },
+        {
+          "symbol": "SLBBL",
+          "reported_name": "Sworojgar LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1273,
+            "npl": 0.0665,
+            "deposits": 5613090000.0,
+            "loans": 10901380000.0,
+            "net_profit": 310850000.0,
+            "regulatory_roa": 0.0248,
+            "regulatory_roe": 0.2152,
+            "base_rate": 0.1024
+          }
+        },
+        {
+          "symbol": "KMCDB",
+          "reported_name": "Kalika LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1167,
+            "npl": 0.0978,
+            "deposits": 2036910000.0,
+            "loans": 5538300000.0,
+            "net_profit": 113860000.0,
+            "regulatory_roa": 0.0182,
+            "regulatory_roe": 0.1678,
+            "base_rate": 0.124
+          }
+        },
+        {
+          "symbol": "JSLBB",
+          "reported_name": "Jana Uththan LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0833,
+            "npl": 0.1714,
+            "deposits": 1036099999.9999999,
+            "loans": 2220670000.0,
+            "net_profit": 18210000.0,
+            "regulatory_roa": 0.006999999999999999,
+            "regulatory_roe": 0.0965,
+            "base_rate": 0.1249
+          }
+        },
+        {
+          "symbol": "SWMF",
+          "reported_name": "Suryodaya Womi LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1151,
+            "npl": 0.1258,
+            "deposits": 6572700000.0,
+            "loans": 12915120000.0,
+            "net_profit": 217850000.0,
+            "regulatory_roa": 0.0149,
+            "regulatory_roe": 0.1444,
+            "base_rate": 0.11349999999999999
+          }
+        },
+        {
+          "symbol": "LLBS",
+          "reported_name": "Laxmi LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1039,
+            "npl": 0.1193,
+            "deposits": 2856830000.0,
+            "loans": 6402760000.0,
+            "net_profit": 106890000.0,
+            "regulatory_roa": 0.0129,
+            "regulatory_roe": 0.14529999999999998,
+            "base_rate": 0.1399
+          }
+        },
+        {
+          "symbol": "HLBSL",
+          "reported_name": "Himalayan LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1118,
+            "npl": 0.0904,
+            "deposits": 1272160000.0,
+            "loans": 5038600000.0,
+            "net_profit": 99830000.0,
+            "regulatory_roa": 0.015300000000000001,
+            "regulatory_roe": 0.1801,
+            "base_rate": 0.11699999999999999
+          }
+        },
+        {
+          "symbol": "VLBS",
+          "reported_name": "Vijay LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0889,
+            "npl": 0.17370000000000002,
+            "deposits": 2331710000.0,
+            "loans": 10236560000.0,
+            "net_profit": 196160000.0,
+            "regulatory_roa": 0.0167,
+            "regulatory_roe": 0.20370000000000002,
+            "base_rate": 0.1115
+          }
+        },
+        {
+          "symbol": "NMBMF",
+          "reported_name": "NMB LBSL",
+          "metrics": {
+            "capital_adequacy": 0.11779999999999999,
+            "npl": 0.131,
+            "deposits": 2100730000.0,
+            "loans": 9015020000.0,
+            "net_profit": 135680000.0,
+            "regulatory_roa": 0.0078000000000000005,
+            "regulatory_roe": 0.1373,
+            "base_rate": 0.12300000000000001
+          }
+        },
+        {
+          "symbol": "FOWAD",
+          "reported_name": "Forward LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0917,
+            "npl": 0.1617,
+            "deposits": 11355910000.0,
+            "loans": 23598620000.0,
+            "net_profit": 662310000.0,
+            "regulatory_roa": 0.023399999999999997,
+            "regulatory_roe": 0.3508,
+            "base_rate": 0.1035
+          }
+        },
+        {
+          "symbol": "GILB",
+          "reported_name": "Global IME LBSL",
+          "metrics": {
+            "capital_adequacy": 0.12300000000000001,
+            "npl": 0.087,
+            "deposits": 4092400000.0,
+            "loans": 11069970000.0,
+            "net_profit": 364090000.0,
+            "regulatory_roa": 0.027999999999999997,
+            "regulatory_roe": 0.2681,
+            "base_rate": 0.10869999999999999
+          }
+        },
+        {
+          "symbol": "MSLB",
+          "reported_name": "Mahuli LBSL",
+          "metrics": {
+            "capital_adequacy": 0.10980000000000001,
+            "npl": 0.0587,
+            "deposits": 2070170000.0,
+            "loans": 6407040000.0,
+            "net_profit": 175470000.0,
+            "regulatory_roa": 0.0235,
+            "regulatory_roe": 0.24710000000000001,
+            "base_rate": 0.113
+          }
+        },
+        {
+          "symbol": "MERO",
+          "reported_name": "Mero LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1168,
+            "npl": 0.1732,
+            "deposits": 4639400000.0,
+            "loans": 16106720000.0,
+            "net_profit": 267480000.00000003,
+            "regulatory_roa": 0.011699999999999999,
+            "regulatory_roe": 0.12890000000000001,
+            "base_rate": 0.11789999999999999
+          }
+        },
+        {
+          "symbol": "SMATA",
+          "reported_name": "Samata Gharelu LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1268,
+            "npl": 0.1322,
+            "deposits": 1846390000.0,
+            "loans": 6892370000.0,
+            "net_profit": 113990000.0,
+            "regulatory_roa": 0.014199999999999999,
+            "regulatory_roe": 0.1285,
+            "base_rate": 0.10300000000000001
+          }
+        },
+        {
+          "symbol": "SLBSL",
+          "reported_name": "Samudayik LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0723,
+            "npl": 0.0489,
+            "deposits": 825940000.0,
+            "loans": 2060210000.0,
+            "net_profit": 41100000.0,
+            "regulatory_roa": 0.0168,
+            "regulatory_roe": 0.31129999999999997,
+            "base_rate": 0.1404
+          }
+        },
+        {
+          "symbol": "NMFBS",
+          "reported_name": "National Microfinance LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1391,
+            "npl": 0.0416,
+            "deposits": 8003340000.0,
+            "loans": 28974830000.0,
+            "net_profit": 891300000.0,
+            "regulatory_roa": 0.023700000000000002,
+            "regulatory_roe": 0.2302,
+            "base_rate": 0.0756
+          }
+        },
+        {
+          "symbol": "GBLBS",
+          "reported_name": "Gramin Bikas LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1288,
+            "npl": 0.0487,
+            "deposits": 3954870000.0,
+            "loans": 15825060000.0,
+            "net_profit": 424250000.0,
+            "regulatory_roa": 0.0227,
+            "regulatory_roe": 0.225,
+            "base_rate": 0.1375
+          }
+        },
+        {
+          "symbol": "USLB",
+          "reported_name": "Unnati Sahakarya LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0928,
+            "npl": 0.09390000000000001,
+            "deposits": 1364950000.0,
+            "loans": 4030300000.0,
+            "net_profit": 67090000.0,
+            "regulatory_roa": 0.0148,
+            "regulatory_roe": 0.1783,
+            "base_rate": 0.1282
+          }
+        },
+        {
+          "symbol": "NADEP",
+          "reported_name": "NADEP LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0875,
+            "npl": 0.1536,
+            "deposits": 2427730000.0,
+            "loans": 6519160000.0,
+            "net_profit": 143400000.0,
+            "regulatory_roa": 0.0183,
+            "regulatory_roe": 0.27690000000000003,
+            "base_rate": 0.1162
+          }
+        },
+        {
+          "symbol": "SMB",
+          "reported_name": "Support LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1133,
+            "npl": 0.0216,
+            "deposits": 597760000.0,
+            "loans": 2210770000.0,
+            "net_profit": 70920000.0,
+            "regulatory_roa": 0.029500000000000002,
+            "regulatory_roe": 0.27690000000000003,
+            "base_rate": 0.1191
+          }
+        },
+        {
+          "symbol": "ACLBSL",
+          "reported_name": "Aarambha Chautari LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0926,
+            "npl": 0.0601,
+            "deposits": 2261790000.0,
+            "loans": 5608240000.0,
+            "net_profit": 107530000.0,
+            "regulatory_roa": 0.0171,
+            "regulatory_roe": 0.1956,
+            "base_rate": 0.1285
+          }
+        },
+        {
+          "symbol": "ALBSL",
+          "reported_name": "Asha LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1056,
+            "npl": 0.0857,
+            "deposits": 3813720000.0,
+            "loans": 12175910000.0,
+            "net_profit": 265390000.0,
+            "regulatory_roa": 0.0194,
+            "regulatory_roe": 0.223,
+            "base_rate": 0.10439999999999999
+          }
+        },
+        {
+          "symbol": "GLBSL",
+          "reported_name": "Gurans LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0885,
+            "npl": 0.0296,
+            "deposits": 638290000.0,
+            "loans": 2250680000.0,
+            "net_profit": 41000000.0,
+            "regulatory_roa": 0.0101,
+            "regulatory_roe": 0.2007,
+            "base_rate": 0.114
+          }
+        },
+        {
+          "symbol": "GMFBS",
+          "reported_name": "Ganapati LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0885,
+            "npl": 0.1379,
+            "deposits": 525929999.99999994,
+            "loans": 2360240000.0,
+            "net_profit": 39100000.0,
+            "regulatory_roa": 0.0143,
+            "regulatory_roe": 0.2137,
+            "base_rate": 0.1197
+          }
+        },
+        {
+          "symbol": "ILBS",
+          "reported_name": "Infinity LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1144,
+            "npl": 0.1292,
+            "deposits": 1497730000.0,
+            "loans": 6018050000.0,
+            "net_profit": 171350000.0,
+            "regulatory_roa": 0.025099999999999997,
+            "regulatory_roe": 0.2404,
+            "base_rate": 0.12050000000000001
+          }
+        },
+        {
+          "symbol": "SMFBS",
+          "reported_name": "Swabhiman LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0863,
+            "npl": 0.10830000000000001,
+            "deposits": 887030000.0,
+            "loans": 3013150000.0,
+            "net_profit": 50800000.0,
+            "regulatory_roa": 0.0151,
+            "regulatory_roe": 0.1883,
+            "base_rate": 0.1079
+          }
+        },
+        {
+          "symbol": "SMPDA",
+          "reported_name": "Sampada LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1032,
+            "npl": 0.11869999999999999,
+            "deposits": 3080440000.0,
+            "loans": 10768300000.0,
+            "net_profit": 219070000.0,
+            "regulatory_roa": 0.018500000000000003,
+            "regulatory_roe": 0.214,
+            "base_rate": 0.1124
+          }
+        },
+        {
+          "symbol": "NICLBSL",
+          "reported_name": "NIC Asia LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0694,
+            "npl": 0.124,
+            "deposits": 3103570000.0,
+            "loans": 22150820000.0,
+            "net_profit": 306170000.0,
+            "regulatory_roa": 0.010700000000000001,
+            "regulatory_roe": 0.2375,
+            "base_rate": 0.1061
+          }
+        },
+        {
+          "symbol": "MLBSL",
+          "reported_name": "Mahila LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0601,
+            "npl": 0.11349999999999999,
+            "deposits": 2357230000.0,
+            "loans": 5928910000.0,
+            "net_profit": 80260000.0,
+            "regulatory_roa": 0.012199999999999999,
+            "regulatory_roe": 0.2983,
+            "base_rate": 0.1105
+          }
+        },
+        {
+          "symbol": "MLBS",
+          "reported_name": "Manushi LBSL",
+          "metrics": {
+            "capital_adequacy": 0.057,
+            "npl": 0.086,
+            "deposits": 1241930000.0,
+            "loans": 1682930000.0,
+            "net_profit": 21470000.0,
+            "regulatory_roa": 0.0106,
+            "regulatory_roe": 0.2565,
+            "base_rate": 0.1427
+          }
+        },
+        {
+          "symbol": "UNLB",
+          "reported_name": "Unique Nepal LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0676,
+            "npl": 0.1943,
+            "deposits": 2896900000.0,
+            "loans": 4088620000.0,
+            "net_profit": 45430000.0,
+            "regulatory_roa": 0.0092,
+            "regulatory_roe": 0.1827,
+            "base_rate": 0.1313
+          }
+        },
+        {
+          "symbol": "ULBSL",
+          "reported_name": "Upakar LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0823,
+            "npl": 0.09970000000000001,
+            "deposits": 1641650000.0,
+            "loans": 2505660000.0,
+            "net_profit": 54140000.0,
+            "regulatory_roa": 0.0176,
+            "regulatory_roe": 0.25,
+            "base_rate": 0.1159
+          }
+        },
+        {
+          "symbol": "DLBS",
+          "reported_name": "Dhaulagiri LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0757,
+            "npl": 0.2052,
+            "deposits": 952880000.0,
+            "loans": 2109300000.0000002,
+            "net_profit": 20920000.0,
+            "regulatory_roa": 0.008100000000000001,
+            "regulatory_roe": 0.1263,
+            "base_rate": 0.14150000000000001
+          }
+        },
+        {
+          "symbol": "CYCL",
+          "reported_name": "CYC Nepal LBSL",
+          "metrics": {
+            "capital_adequacy": 0.086,
+            "npl": 0.1404,
+            "deposits": 2984050000.0,
+            "loans": 6780090000.0,
+            "net_profit": 294810000.0,
+            "regulatory_roa": 0.037000000000000005,
+            "regulatory_roe": 0.5754,
+            "base_rate": 0.12480000000000001
+          }
+        },
+        {
+          "symbol": "NESDO",
+          "reported_name": "Nesdo Samriddha LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1506,
+            "npl": 0.2066,
+            "deposits": 2512650000.0,
+            "loans": 4156340000.0,
+            "net_profit": 137010000.0,
+            "regulatory_roa": 0.0254,
+            "regulatory_roe": 0.21280000000000002,
+            "base_rate": 0.1813
+          }
+        },
+        {
+          "symbol": "SWASTIK",
+          "reported_name": "Swastik LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0902,
+            "npl": 0.23579999999999998,
+            "deposits": 100630000.0,
+            "loans": 715250000.0,
+            "net_profit": 2740000.0,
+            "regulatory_roa": 0.0029,
+            "regulatory_roe": 0.0387,
+            "base_rate": 0.1165
+          }
+        },
+        {
+          "symbol": "SHLB",
+          "reported_name": "Shrijanshil LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0999,
+            "npl": 0.11259999999999999,
+            "deposits": 943600000.0,
+            "loans": 3062210000.0,
+            "net_profit": 33700000.0,
+            "regulatory_roa": 0.0091,
+            "regulatory_roe": 0.1251,
+            "base_rate": 0.1193
+          }
+        },
+        {
+          "symbol": "MATRI",
+          "reported_name": "Matribhumi LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0623,
+            "npl": 0.2661,
+            "deposits": 4772770000.0,
+            "loans": 11895200000.0,
+            "net_profit": 274820000.0,
+            "regulatory_roa": 0.0192,
+            "regulatory_roe": 0.4154,
+            "base_rate": 0.1223
+          }
+        },
+        {
+          "symbol": "JBLB",
+          "reported_name": "Jeevan Bikas LBSL",
+          "metrics": {
+            "capital_adequacy": 0.16390000000000002,
+            "npl": 0.0533,
+            "deposits": 14809460000.0,
+            "loans": 32154490000.0,
+            "net_profit": 1078380000.0,
+            "regulatory_roa": 0.0286,
+            "regulatory_roe": 0.2059,
+            "base_rate": 0.0974
+          }
+        },
+        {
+          "symbol": "ANLB",
+          "reported_name": "Aatmanirbhar LBSL",
+          "metrics": {
+            "capital_adequacy": 0.1573,
+            "npl": 0.10779999999999999,
+            "deposits": 1130680000.0,
+            "loans": 1884550000.0,
+            "net_profit": 62400000.0,
+            "regulatory_roa": 0.0286,
+            "regulatory_roe": 0.1967,
+            "base_rate": 0.1431
+          }
+        },
+        {
+          "symbol": "AVYAN",
+          "reported_name": "Aviyan LBSL",
+          "metrics": {
+            "capital_adequacy": 0.0895,
+            "npl": 0.0741,
+            "deposits": 354110000.0,
+            "loans": 3590770000.0,
+            "net_profit": 122360000.0,
+            "regulatory_roa": 0.031,
+            "regulatory_roe": 0.37229999999999996,
+            "base_rate": 0.10289999999999999
+          }
+        }
+      ]
+    },
+    {
+      "source": "Nabil Bank \u2014 Q4 FY 2025/26 standalone",
+      "source_type": "company_quarterly",
+      "source_url": "https://assets.nabilbank.com/uploads/Finance/Interim%20Financial/interim-financial-report-q4-fy-2025-26-nabil-bank-71d27cb6.pdf",
+      "published_at": "2026-10-01T07:43:26.005675+00:00",
+      "retrieved_at": "2026-10-01T07:43:26.005675+00:00",
+      "period_end": "2026-07-16",
+      "reported_period": "2082/83 Q4 full-year YTD \u2014 standalone",
+      "basis": "EPS and book value exclude preference capital/dividend as disclosed. Distributable EPS includes retained earnings; it is not a declared dividend. Original publication date unavailable: first verified availability used conservatively.",
+      "companies": [
+        {
+          "symbol": "NABIL",
+          "metrics": {
+            "eps": 28.36,
+            "book_value": 247.28,
+            "roe": 0.1176,
+            "roa": 0.0115,
+            "npl": 0.042,
+            "capital_adequacy": 0.1237,
+            "provision_coverage": 1.1973,
+            "funding_cost": 0.0309,
+            "interest_spread": 0.0318,
+            "distributable_eps": 19.1,
+            "eps_growth": 0.2955687528551849,
+            "net_profit": 7905796000
+          }
+        }
+      ]
+    },
+    {
+      "source": "Shivam Cements \u2014 Q4 FY 2082/83 standalone",
+      "source_type": "company_quarterly",
+      "source_url": "https://shivamcement.com.np/assets/uploads/6d187-4th-qtr-fs-fy-2082_83.pdf",
+      "published_at": "2026-10-01T07:43:26.005675+00:00",
+      "retrieved_at": "2026-10-01T07:43:26.005675+00:00",
+      "period_end": "2026-07-16",
+      "reported_period": "2082/83 Q4 full-year YTD \u2014 standalone",
+      "basis": "EPS comparison uses NAS33 bonus-restated prior-year EPS 14.27. Cash flow and revenue are standalone. Capex = cash PPE + intangible purchases. Debt excludes lease liabilities; no normalized earning power or FCFE is inferred. Original publication date unavailable: first verified availability used conservatively.",
+      "companies": [
+        {
+          "symbol": "SHIVM",
+          "metrics": {
+            "eps": 14.03,
+            "book_value": 188.75619833684746,
+            "shares": 55932287.125,
+            "revenue": 6922657420,
+            "revenue_growth": -0.10866035867824353,
+            "eps_growth": -0.016818500350385457,
+            "net_profit": 784474151,
+            "operating_cash_flow": 755095451,
+            "capex": 208903094,
+            "cash": 750188792,
+            "debt": 5502368,
+            "cash_conversion": 0.9625498176548586
+          }
+        }
+      ]
+    },
+    {
+      "source": "Everest Bank \u2014 Q4 FY 2082/83",
+      "source_type": "company_quarterly",
+      "source_url": "https://everestbankltd.com/wp-content/uploads/2026/08/4th-Quarterly-Financial-Report-of-Fiscal-Year-2082-83.pdf",
+      "published_at": "2026-10-01T07:43:26.005675+00:00",
+      "retrieved_at": "2026-10-01T07:43:26.005675+00:00",
+      "period_end": "2026-07-16",
+      "reported_period": "2082/83 Q4 full-year YTD \u2014 standalone",
+      "basis": "Web-extracted official PDF pages 0\u20137. Amounts NPR thousands converted to NPR. Distributable EPS includes accumulated retained earnings and is not a declared dividend. Reported EPS and ROE remain distinct from sustainable earning-power assumptions. Original publication date unavailable: first verified availability used conservatively.",
+      "companies": [
+        {
+          "symbol": "EBL",
+          "metrics": {
+            "eps": 36.95,
+            "book_value": 256.47,
+            "roe": 0.151,
+            "roa": 0.0136,
+            "npl": 0.0049,
+            "capital_adequacy": 0.1223,
+            "provision_coverage": 2.9525,
+            "funding_cost": 0.0315,
+            "interest_spread": 0.0305,
+            "distributable_eps": 38.32,
+            "eps_growth": -0.011767852366942999,
+            "net_profit": 5069936000,
+            "deposit_growth": 0.057560635489648515
+          }
+        }
+      ]
+    }
+  ]
+}

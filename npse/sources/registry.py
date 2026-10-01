@@ -8,18 +8,19 @@ from ..config import AUTHORITY
 SOURCES = [
  {"name":"NEPSE", "type":"official market/disclosures", "url":"https://www.nepalstock.com.np", "status":"Official adapter requires a supported authorized feed"},
  {"name":"SEBON", "type":"regulator/corporate actions", "url":"https://www.sebon.gov.np", "status":"Disclosure admission available; automatic extraction pending"},
- {"name":"Nepal Rastra Bank", "type":"financial regulator", "url":"https://www.nrb.org.np", "status":"Validated report admission available"},
+ {"name":"Nepal Rastra Bank", "type":"financial regulator", "url":"https://www.nrb.org.np/category/key-financial-indicators/", "status":"July 2026 commercial-bank and microfinance reports admitted, with regulatory-basis notes and per-metric provenance"},
  {"name":"Nepal Insurance Authority", "type":"insurance regulator", "url":"https://nia.gov.np", "status":"Validated report admission available"},
  {"name":"Company audited and quarterly filings", "type":"primary financial authority", "url":None, "status":"Per-value evidence required; no silently invented ratios"},
  {"name":"YONEPSE", "type":"secondary market discovery", "url":"https://shubhamnpk.github.io/yonepse", "status":"Market adapter active; GitHub origin fallback when Pages is stale"},
  {"name":"Aabishkar2 / nepse-data", "type":"secondary daily price history", "url":"https://github.com/Aabishkar2/nepse-data", "status":"Historical CSV adapter available; admitted coverage shown by company. Unadjusted prices, not independent current-price confirmation"},
- {"name":"SocrateAI / nepse-open-data", "type":"secondary adjusted/unadjusted archive", "url":"https://github.com/socrateai-official/nepse-open-data", "status":"Repository inspected; adjusted-series adapter not connected or validated"},
+ {"name":"SocrateAI / nepse-open-data", "type":"secondary adjusted/unadjusted archive", "url":"https://github.com/socrateai-official/nepse-open-data", "status":"September 18, 2026 adjusted/unadjusted comparison snapshot connected. Provider adjustment factors are not a verified corporate-action ledger or today's quote"},
  {"name":"ShareSansar", "type":"secondary verification/discovery", "url":"https://www.sharesansar.com", "status":"Research citations; market/financial adapter not connected"},
  {"name":"MeroLagani", "type":"secondary verification/discovery", "url":"https://merolagani.com", "status":"Not connected"},
  {"name":"NepseAlpha", "type":"secondary verification/discovery", "url":"https://nepsealpha.com", "status":"Not connected"},
 ]
 
 OFFICIAL_COMPANIES = [
+ {"symbol":"EBL","company":"Everest Bank Limited","sector":"banks","profile":{"description":"Commercial bank: compare low reported NPL, capital buffers, distributable earnings and the price paid for the business.","official_domain":"everestbankltd.com"}},
  {"symbol":"NABIL","company":"Nabil Bank Limited","sector":"banks","profile":{"description":"Commercial bank: evaluate credit quality, capital and distributable earnings.","official_domain":"nabilbank.com"}},
  {"symbol":"CHCL","company":"Chilime Hydropower Company Limited","sector":"hydropower","profile":{"description":"Hydropower: evaluate generation, project economics, debt service and concession life.","official_domain":"chilime.com.np"}},
  {"symbol":"SHIVM","company":"Shivam Cements Limited","sector":"manufacturing","profile":{"description":"Cement manufacturing: evaluate capacity economics, margins and cash flow.","official_domain":"shivamcement.com.np"}},
