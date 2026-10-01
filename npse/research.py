@@ -11,6 +11,7 @@ from .models.common import normalize_metrics
 from .decision import evaluate, rank
 from . import database
 from .shortlist import screen
+from .technical import analyse
 
 
 def build_research(market_feed=None, inputs=None, now=None):
@@ -47,6 +48,7 @@ def build_research(market_feed=None, inputs=None, now=None):
         turns = [p["turnover"] for p in c["price_history"][-20:] if p.get("turnover") is not None]
         c["metrics"]["turnover_20d"] = mean(turns) if len(turns)==20 else None
     results = [evaluate(c,[p for p in companies if p["sector"]==c["sector"]],now) for c in companies]
+    technical = analyse(results,now)
     candidates = rank(results)
     preliminary = screen(results,now)
     judgments = {row['symbol']:row for row in preliminary['comparisons']}
@@ -77,12 +79,12 @@ def build_research(market_feed=None, inputs=None, now=None):
         "market_freshness":{"observed_at":feed["observed_at"],"retrieved_at":feed["retrieved_at"],"age_days":fresh,
             "state":"FRESH SECONDARY OBSERVATION" if fresh is not None and fresh <= GATES["market_age_days"] else "STALE / UNAVAILABLE"},
         "coverage":{"registered":len(results),"eligible":sum(c["eligible"] for c in results),"with_primary_financials":sum(any(v.get("source_type") != "secondary" for v in c["selected_evidence"].values()) for c in results),"universe_status":"224 active equities discovered in six sectors as of 2026-10-01; secondary classification, official completeness verification pending"},
-        "preliminary":preliminary,"top3":candidates,"top3_message":f"{len(candidates)} of 3 evidence-qualified candidates. " + ("No additional candidate currently meets the evidence threshold." if len(candidates)<3 else ""),
+        "technical":technical,"preliminary":preliminary,"top3":candidates,"top3_message":f"{len(candidates)} of 3 evidence-qualified candidates. " + ("No additional candidate currently meets the evidence threshold." if len(candidates)<3 else ""),
         "companies":results,"sectors":[{"slug":s,"name":name,"registered":sum(c["sector"]==s for c in results),"top3":rank([c for c in results if c["sector"]==s])} for s,name in SECTOR_NAMES.items()],
         "sources":SOURCES,"market_transports":feed.get("transports",[]),"discrepancies":[d for c in results for d in c["discrepancies"]],
         "config":{"weights":WEIGHTS,"gates":GATES,"scenarios":SCENARIOS},
         "alerts":(["The research database is not connected."] if not db["connected"] else []) +
-            [f"Primary financial evidence available for {sum(any(v.get('source_type') != 'secondary' for v in c['selected_evidence'].values()) for c in results)} of {len(results)} companies. Use the populated preliminary shortlist and comparisons below. Full buy signals also require sustainable earnings, current-price confirmation and supported valuation."] +
+            [f"Primary financial evidence available for {sum(any(v.get('source_type') != 'secondary' for v in c['selected_evidence'].values()) for c in results)} of {len(results)} companies. Price/volume rankings are available separately; fundamental valuation requires sustainable earnings, current-price confirmation and supported valuation."] +
             (["Market observations are stale or unavailable."] if fresh is None or fresh>GATES["market_age_days"] else []),
         "backtest":{"status":"INSUFFICIENT POINT-IN-TIME HISTORY","sample_size":0,"period":None,"returns":None,"drawdown":None,"hit_rate":None,
             "methodology":"Walk-forward ranking using only published and retrieved observations available at each rebalance, adjusted prices, fixed weights and explicit trading costs.",

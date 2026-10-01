@@ -32,7 +32,7 @@ def parse_history(body, symbol, cutoff=None):
                 "observed_at": day.isoformat()+"T15:00:00+05:45", "source_url": BASE+symbol+".csv"}
         except (ValueError, KeyError, TypeError):
             rejected += 1
-    return [records[d] for d in sorted(records)[-200:]], rejected
+    return [records[d] for d in sorted(records)[-260:]], rejected
 
 
 def fetch_history(symbols=None):
