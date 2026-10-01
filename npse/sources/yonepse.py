@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from urllib.request import Request, urlopen
 
-BASE_URL = "https://shubhamnpk.github.io/yonepse"
-USER_AGENT = "NPSE-Control-Tower/0.1 (+https://github.com/pailapilates10-cmd/NPSE-Control-Tower)"
+BASE_URL = "https://raw.githubusercontent.com/Shubhamnpk/yonepse/main"
+USER_AGENT = "NPSE-Control-Tower/1.0 (+https://github.com/pailapilates10-cmd/NPSE-Control-Tower)"
 
 
 def fetch_json(path: str, timeout: int = 15):

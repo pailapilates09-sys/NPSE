@@ -1,41 +1,24 @@
-# NPSE Data Source Policy
+# NPSE source policy and research evidence
 
-## Authority order
+YONEPSE is a secondary provider. Pages and GitHub-origin JSON are two transports of the same provider, never independent corroboration. The adapter chooses the newest observation timestamp. During 2026-10-01 checks, Pages stopped at 2026-09-24 while the origin contained 2026-09-30 observations. Retrieval time does not make stale data fresh. Diagnostics use the origin and show observation/history dates.
 
-1. **NEPSE official data** — target authority when a stable machine-readable path is available.
-2. **YONEPSE** — current Phase 1 machine-readable adapter. It publishes JSON and documents its upstream sources.
-3. **Independent market sites** — validation/cross-check only unless explicitly promoted after testing.
-4. **Historical GitHub datasets** — bootstrap/backtest use; never treated as live authority without freshness checks.
+The 224-equity discovery registry comes from https://raw.githubusercontent.com/Shubhamnpk/yonepse/main/data/other/securities.json, retrieved 2026-10-01. It includes active equities in six supported model families. Official completeness, status, classifications and company identities remain verification work. Numerical live market histories are not stored in GitHub.
 
-## Phase 1 adapter
+NEPSE, audited/quarterly company filings, Nepal Rastra Bank, Nepal Insurance Authority and SEBON are authoritative admission targets. Automatic authoritative financial extraction is not operational. Structured admissions require complete provenance, units, periods, dates and explicit normalization/validation. ShareSansar, MeroLagani and NepseAlpha remain discovery/corroboration targets; no active financial adapter is claimed for them.
 
-Base URL:
+Resolution compares only the same metric, period and unit. Differences over 3% produce SOURCE DISCREPANCY and block positive states. Different fiscal periods are not agreement. Future publication/retrieval cannot influence earlier decisions. No observed conflict does not prove agreement; independent provider domains are required.
 
-`https://shubhamnpk.github.io/yonepse`
+## Investor-method sources
 
-Used endpoints:
+- Buffett: Berkshire 1986 shareholder letter, https://www.berkshirehathaway.com/letters/1986.html — owner earnings and capital needs; NPSE weights are separately chosen.
+- Lynch: Fidelity research guide, https://www.fidelity.com/viewpoints/active-investor/trading-guide-managing-investment-risks-and-opportunities — business understanding, no invented formula.
+- Marks: Oaktree Risk Revisited Again (2015), https://www.oaktreecapital.com/insights/memo/risk-revisited-again — uncertainty/downside context; scenarios do not prove safety.
+- Ambika Prasad Paudel: ShareSansar direct interview, 2018-09-10, linked on /methodology — financial indicators, growth, cycles, primary information and exits.
+- Chhotelal Rauniyar: ShareSansar reported reform proposals, 2026-08-10, linked on /methodology — policy/cost/protection context; personal stock-selection formula unverified.
+- Nirmal Pradhan: NEPSE Trading video interview, 2024-11-14, linked on /methodology — transcript unavailable; principles are not attributed and receive no weight.
 
-- `/data/market/status.json`
-- `/data/market/indices.json`
-- `/data/market/summary.json`
-- `/data/market/history.json`
-- `/data/market/sector_indices.json`
-- `/data/nepse_data.json`
-- `/data/indices/manifest.json`
-- `/data/indices/monthly/YYYY-MM.json`
+These are case studies, not a ranking of the best investors or endorsements. Personal outcomes do not replace validated financial evidence.
 
-## Provenance requirements
+## Historical evidence
 
-Every API response must expose:
-
-- adapter name
-- upstream base URL
-- retrieval timestamp
-- market observation timestamp when supplied upstream
-- final historical-through date for index shards
-
-Later database ingestion will also record raw payload hashes, normalization versions, discrepancy flags, and validation outcomes.
-
-## Freshness
-
-A green dashboard does not mean the exchange is open. The UI separately displays market-open status and the latest upstream observation time. Sector history may lag the intraday snapshot because finalized historical index shards can be published later.
+Walk-forward code excludes unavailable-by-time evidence and evaluates same-sector peers. Live performance results remain unavailable without complete point-in-time filings, adjusted outcomes, delisted-universe coverage, lower-ranked comparisons and a portfolio drawdown series. No synthetic performance is published.

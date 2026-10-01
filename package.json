@@ -1,11 +1,13 @@
 {
   "name": "npse-control-tower",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test:engine": "python -m unittest discover -s tests -v"
   },
   "dependencies": {
     "next": "^16.0.0",

@@ -107,3 +107,4 @@ def sector_performance(months: list[dict], metadata: list[dict]) -> list[dict]:
             "return_20d": ret(20),
         })
     return output
+

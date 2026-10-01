@@ -86,3 +86,4 @@ def build_dashboard() -> dict:
             "index_history_final_through": data["manifest"].get("finalizedThrough") or data["manifest"].get("latestDate"),
         },
     }
+
