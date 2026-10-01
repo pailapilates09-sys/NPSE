@@ -20,6 +20,8 @@ export function DecisionEvidence({data}:{data:Board}){
 function financialReading(c:Company){
  const m=c.metrics;
  if(c.sector==="life-insurance")return "Wait for actuarial/reserve and sustainable-profit analysis; the reported earnings multiple alone cannot value this insurer.";
+ if(c.sector==="non-life-insurance")return `Net profit change ${pct(m.net_profit_growth)}; net claims / earned premium ${pct(m.claims_ratio)}. Wait for evidence of underwriting recovery and reserve adequacy.`;
+ if(c.sector==="microfinance")return `NPL ${pct(m.npl)}; capital ${pct(m.capital_adequacy)}. Review borrower collections, provisions and funding before setting a value.`;
  if(c.sector==="manufacturing")return `Revenue change ${pct(m.revenue_growth)}. Review demand, margins and cash conversion before paying for growth.`;
  if(c.sector==="banks")return `ROE ${pct(m.roe)}; NPL ${pct(m.npl)}. Compare the earnings multiple with sustainable returns and provisioning risk.`;
  return "Review sustainable earnings and sector-specific risks before setting an entry price.";

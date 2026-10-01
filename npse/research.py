@@ -49,6 +49,22 @@ def build_research(market_feed=None, inputs=None, now=None):
     results = [evaluate(c,[p for p in companies if p["sector"]==c["sector"]],now) for c in companies]
     candidates = rank(results)
     preliminary = screen(results,now)
+    judgments = {row['symbol']:row for row in preliminary['comparisons']}
+    for c in results:
+        if not c['eligible'] and c['symbol'] in judgments:
+            row = judgments[c['symbol']]
+            c['why'] = row['why']
+            c['why_now'] = row['decision'] + '. ' + row['next_step']
+            c['thesis'] = 'Preliminary credit-quality / capital thesis only. ' + row['why']
+        elif not c['eligible'] and c['metrics'].get('eps') is not None:
+            m = c['metrics']
+            c['why'] = f"Reported full-year EPS Rs {m['eps']:.2f}. " + (f"Observed earnings multiple {m['pe']:.1f}×. " if m.get('pe') is not None else '') + 'Sustainable earning power and a full valuation still require evidence.'
+            if m.get('net_profit_growth') is not None:
+                c['why_now'] = f"Net profit changed {m['net_profit_growth']*100:.1f}%; review underwriting, reserves and reinsurance before investing."
+            elif m.get('revenue_growth') is not None:
+                c['why_now'] = f"Revenue changed {m['revenue_growth']*100:.1f}%; review demand, margins and cash conversion before investing."
+            elif m.get('eps_growth') is not None:
+                c['why_now'] = f"Reported EPS changed {m['eps_growth']*100:.1f}%; validate the drivers and sustainable returns before investing."
     # Keep the full panel in Postgres and calculations; transmit a small readable history.
     for c in results:
         c['history_sessions'] = len(c['price_history'])
@@ -66,7 +82,7 @@ def build_research(market_feed=None, inputs=None, now=None):
         "sources":SOURCES,"market_transports":feed.get("transports",[]),"discrepancies":[d for c in results for d in c["discrepancies"]],
         "config":{"weights":WEIGHTS,"gates":GATES,"scenarios":SCENARIOS},
         "alerts":(["The research database is not connected."] if not db["connected"] else []) +
-            [f"Primary financial evidence available for {sum(any(v.get('source_type') != 'secondary' for v in c['selected_evidence'].values()) for c in results)} of {len(results)} companies. Rankings remain unavailable until financials, current-price confirmation, comparable peers and historical adjustments pass."] +
+            [f"Primary financial evidence available for {sum(any(v.get('source_type') != 'secondary' for v in c['selected_evidence'].values()) for c in results)} of {len(results)} companies. Use the populated preliminary shortlist and comparisons below. Full buy signals also require sustainable earnings, current-price confirmation and supported valuation."] +
             (["Market observations are stale or unavailable."] if fresh is None or fresh>GATES["market_age_days"] else []),
         "backtest":{"status":"INSUFFICIENT POINT-IN-TIME HISTORY","sample_size":0,"period":None,"returns":None,"drawdown":None,"hit_rate":None,
             "methodology":"Walk-forward ranking using only published and retrieved observations available at each rebalance, adjusted prices, fixed weights and explicit trading costs.",

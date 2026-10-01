@@ -51,7 +51,7 @@ def prepare(directory):
     return {'prepared_at':now,'reports':reports}
 
 def observations(dataset):
-    ratios = {'roe','roa','npl','capital_adequcy','capital_adequacy','regulatory_roe','regulatory_roa','regulatory_net_npl','interest_spread','provision_coverage','funding_cost','base_rate','eps_growth','revenue_growth','deposit_growth','cash_conversion'}
+    ratios = {'roe','roa','npl','capital_adequacy','regulatory_roe','regulatory_roa','regulatory_net_npl','interest_spread','provision_coverage','funding_cost','base_rate','eps_growth','revenue_growth','deposit_growth','cash_conversion','solvency_ratio','earned_premium_growth','net_profit_growth','claims_ratio'}
     rows=[]
     for report in dataset['reports']:
         for company in report['companies']:
@@ -63,6 +63,10 @@ def observations(dataset):
 if __name__=='__main__':
     import sys
     data=prepare(Path(sys.argv[1]))
+    existing=ROOT/'data/primary-financials-2026-07.json'
+    if existing.exists():
+        known={r['source_url'] for r in data['reports']}
+        data['reports'] += [r for r in json.loads(existing.read_text())['reports'] if r['source_url'] not in known]
     (ROOT/'data/primary-financials-2026-07.json').write_text(json.dumps(data,indent=2)+'\n')
     out=Path(sys.argv[1])/'observations.json'
     rows=observations(data)

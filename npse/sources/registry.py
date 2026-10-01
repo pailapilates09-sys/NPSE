@@ -20,6 +20,7 @@ SOURCES = [
 ]
 
 OFFICIAL_COMPANIES = [
+ {"symbol":"SCB","company":"Standard Chartered Bank Nepal Limited","sector":"banks","profile":{"description":"Commercial bank: evaluate capital strength, asset quality, earnings durability and valuation.","official_domain":"sc.com"}},
  {"symbol":"EBL","company":"Everest Bank Limited","sector":"banks","profile":{"description":"Commercial bank: compare low reported NPL, capital buffers, distributable earnings and the price paid for the business.","official_domain":"everestbankltd.com"}},
  {"symbol":"NABIL","company":"Nabil Bank Limited","sector":"banks","profile":{"description":"Commercial bank: evaluate credit quality, capital and distributable earnings.","official_domain":"nabilbank.com"}},
  {"symbol":"CHCL","company":"Chilime Hydropower Company Limited","sector":"hydropower","profile":{"description":"Hydropower: evaluate generation, project economics, debt service and concession life.","official_domain":"chilime.com.np"}},
