@@ -26,7 +26,8 @@ def percentile(value, peers, higher=True):
 
 def normalize_metrics(metrics, price):
     out = dict(metrics)
-    out["pe"] = ratio(price, out.get("eps"))
+    out["reported_pe"] = ratio(price, out.get("eps"))
+    out["pe"] = ratio(price, out.get("normalized_eps"))
     out["pb"] = ratio(price, out.get("book_value"))
     ev = None
     if all(number(out.get(k)) is not None for k in ("shares", "debt", "cash")) and number(price) is not None:

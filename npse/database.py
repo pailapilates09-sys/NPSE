@@ -38,6 +38,9 @@ def research_inputs():
         prices = c.execute("SELECT * FROM daily_ohlcv ORDER BY session_date").fetchall()
         actions = c.execute("SELECT * FROM corporate_actions ORDER BY announced_at").fetchall()
     for row in observations:
+        for k in ('normalization_notes','source_id','citation_key','period_key','definition','accounting_basis',
+                  'period_basis','consolidation','underwriting_basis'):
+            if k in (row.get('raw') or {}): row[k] = row['raw'][k]
         row["value"] = float(row["value"])
         for k in ("published_at", "retrieved_at", "period_end", "market_timestamp"):
             row[k] = row[k].isoformat() if row[k] is not None else None
@@ -46,6 +49,13 @@ def research_inputs():
             row[k] = float(row[k]) if row[k] is not None else None
         row["date"] = row.pop("session_date").isoformat()
         row["observed_at"] = row["observed_at"].isoformat()
+    for row in actions:
+        payload = row['payload']
+        for k in ('retrieved_at','source_type'):
+            if k in payload: row[k] = payload[k]
+        if 'payload' in payload: row['payload'] = payload['payload']
+        row['announced_at']=row['announced_at'].isoformat()
+        row['effective_date']=row['effective_date'].isoformat() if row['effective_date'] else None
     return securities, observations, prices, actions
 
 
@@ -56,7 +66,8 @@ def persist_market(companies, market, source_url, retrieved_at):
         for s in companies:
             c.execute("INSERT INTO securities(symbol,company,sector,profile) VALUES(%s,%s,%s,%s) ON CONFLICT(symbol) DO UPDATE SET company=EXCLUDED.company,sector=EXCLUDED.sector,profile=EXCLUDED.profile,updated_at=now()", (s["symbol"],s["company"],s["sector"],Jsonb(s.get("profile", {}))))
             p = s.get("market", {})
-            if p.get("price") is not None and p.get("observed_at"):
+            # Intraday secondary quotes remain in market_sessions, never overwrite completed OHLCV.
+            if p.get("price") is not None and p.get("observed_at") and p.get('completed_session') and p.get('source_type') == 'nepse':
                 c.execute("INSERT INTO daily_ohlcv(symbol,session_date,observed_at,high,low,close,volume,turnover,source_url) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT(symbol,session_date) DO UPDATE SET observed_at=EXCLUDED.observed_at,close=EXCLUDED.close,high=EXCLUDED.high,low=EXCLUDED.low,volume=EXCLUDED.volume,turnover=EXCLUDED.turnover,source_url=EXCLUDED.source_url WHERE EXCLUDED.observed_at >= daily_ohlcv.observed_at", (s["symbol"],p["observed_at"][:10],timestamp(p["observed_at"]),p.get("high"),p.get("low"),p["price"],p.get("volume"),p.get("turnover"),source_url))
         if market.get("observed_at"):
             c.execute("INSERT INTO market_sessions(session_date,observed_at,retrieved_at,source_url,payload) VALUES(%s,%s,%s,%s,%s) ON CONFLICT(session_date) DO UPDATE SET observed_at=EXCLUDED.observed_at,retrieved_at=EXCLUDED.retrieved_at,source_url=EXCLUDED.source_url,payload=EXCLUDED.payload WHERE EXCLUDED.observed_at >= market_sessions.observed_at",(market["observed_at"][:10],timestamp(market["observed_at"]),timestamp(retrieved_at),source_url,Jsonb(market)))
@@ -107,8 +118,31 @@ def save_snapshot(board):
         for s in board["companies"]:
             c.execute("INSERT INTO valuation_runs VALUES(%s,%s,%s) ON CONFLICT DO NOTHING",(run_id,s["symbol"],Jsonb(s["valuation"])))
             c.execute("INSERT INTO investment_scores VALUES(%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",(run_id,s["symbol"],s["quality_score"],s["timing_score"],s["confidence"],s["state"],Jsonb(s["score_breakdown"])))
-            c.execute("INSERT INTO derived_features VALUES(%s,%s,%s,%s) ON CONFLICT DO NOTHING",(s["symbol"],board["as_of"],board["version"],Jsonb(s["metrics"])))
+            c.execute("INSERT INTO derived_features VALUES(%s,%s,%s,%s) ON CONFLICT DO NOTHING",(s["symbol"],board["as_of"],board["version"],Jsonb({'metrics':s['metrics'],'calculations':s.get('calculations',[]),'rule_trace':s.get('rule_trace')})))
             for discrepancy in s["discrepancies"]:
                 key=sha256(json.dumps([s["symbol"],discrepancy],sort_keys=True,default=str).encode()).hexdigest()
                 c.execute("INSERT INTO source_discrepancies(id,symbol,metric,period,status,evidence) VALUES(%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",(key,s["symbol"],discrepancy["metric"],discrepancy["period"],discrepancy["status"],Jsonb(discrepancy)))
     return run_id
+
+
+def audit():
+    """Authenticated provider readback; fixed table names, no secrets or connection string."""
+    tables = ('securities','market_sessions','daily_ohlcv','financial_periods','source_observations',
+              'corporate_actions','source_discrepancies','derived_features','valuation_runs','investment_scores','research_snapshots')
+    with connect() as c:
+        counts = {t:c.execute('SELECT count(*) AS n FROM '+t).fetchone()['n'] for t in tables}
+        latest = c.execute('SELECT id,as_of,engine_version,universe_size FROM research_snapshots ORDER BY as_of DESC LIMIT 1').fetchone()
+        sources = c.execute('SELECT source_type,count(*) AS observations,count(DISTINCT symbol) AS companies FROM source_observations GROUP BY source_type ORDER BY source_type').fetchall()
+    return {'database':status(),'counts':counts,'latest_snapshot':latest,'sources':sources}
+
+
+def import_actions(rows):
+    from .corporate_actions import validate_action
+    from .evidence import timestamp
+    from psycopg.types.json import Jsonb
+    admitted = [validate_action(r) for r in rows]
+    with connect() as c:
+        for r in admitted:
+            c.execute('INSERT INTO corporate_actions(id,symbol,action_type,effective_date,announced_at,source_url,payload) VALUES(%s,%s,%s,%s,%s,%s,%s) ON CONFLICT(id) DO NOTHING',
+                      (r['id'],r['symbol'],r['action_type'],r['effective_date'],timestamp(r['announced_at']),r['source_url'],Jsonb(r)))
+    return {'admitted':len(admitted),'adjustment_completeness':'Not established by a partial ledger'}

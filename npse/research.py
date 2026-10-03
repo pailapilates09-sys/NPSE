@@ -12,6 +12,8 @@ from .decision import evaluate, rank
 from . import database
 from .shortlist import screen
 from .technical import analyse
+from .corpus import summary as corpus_summary
+from hashlib import sha256
 
 
 def build_research(market_feed=None, inputs=None, now=None):
@@ -38,7 +40,13 @@ def build_research(market_feed=None, inputs=None, now=None):
         c["observations"] = observations_by_symbol[c['symbol']]
         c["price_history"] = prices_by_symbol[c['symbol']]
         c["corporate_actions"] = actions_by_symbol[c['symbol']]
+        if c['corporate_actions']:
+            from .corporate_actions import adjusted_prices
+            adjusted=adjusted_prices(c['price_history'],c['corporate_actions'],now.isoformat())
+            c['price_history']=adjusted['prices']
+            c['adjustment_status']='PARTIAL LEDGER — REVIEW REQUIRED'
         selected, _, _ = resolve(c["observations"],now.isoformat())
+        c['_selected'] = selected
         official_price = selected.get("market_price", {})
         if official_price.get("source_type") == "nepse" and official_price.get("market_timestamp") and official_price["value"] > 0:
             c["market"].update({"price":official_price["value"], "observed_at":official_price["market_timestamp"], "source":official_price["source"], "source_type":"nepse", "source_url":official_price["source_url"], "retrieved_at":official_price["retrieved_at"], "verified":True})
@@ -52,6 +60,7 @@ def build_research(market_feed=None, inputs=None, now=None):
     candidates = rank(results)
     preliminary = screen(results,now)
     judgments = {row['symbol']:row for row in preliminary['comparisons']}
+    normalization_notes, history_sources = {}, {}
     for c in results:
         if not c['eligible'] and c['symbol'] in judgments:
             row = judgments[c['symbol']]
@@ -60,7 +69,7 @@ def build_research(market_feed=None, inputs=None, now=None):
             c['thesis'] = 'Preliminary credit-quality / capital thesis only. ' + row['why']
         elif not c['eligible'] and c['metrics'].get('eps') is not None:
             m = c['metrics']
-            c['why'] = f"Reported full-year EPS Rs {m['eps']:.2f}. " + (f"Observed earnings multiple {m['pe']:.1f}×. " if m.get('pe') is not None else '') + 'Sustainable earning power and a full valuation still require evidence.'
+            c['why'] = f"Reported full-year EPS Rs {m['eps']:.2f}. " + (f"Secondary observed reported-earnings multiple {m['reported_pe']:.1f}×. " if m.get('reported_pe') is not None else '') + 'Sustainable earning power and a full valuation still require evidence.'
             if m.get('net_profit_growth') is not None:
                 c['why_now'] = f"Net profit changed {m['net_profit_growth']*100:.1f}%; review underwriting, reserves and reinsurance before investing."
             elif m.get('revenue_growth') is not None:
@@ -71,15 +80,27 @@ def build_research(market_feed=None, inputs=None, now=None):
     for c in results:
         c['history_sessions'] = len(c['price_history'])
         c['history_latest'] = c['price_history'][-1]['date'] if c['price_history'] else None
-        c['price_history'] = [{k:p.get(k) for k in ('date','close','turnover','source_url')} for p in c['price_history'][-20:]]
+        sample = []
+        for p in c['price_history'][-20:]:
+            url=p.get('source_url','')
+            ref=sha256(url.encode()).hexdigest()[:12]
+            history_sources[ref]=url
+            sample.append({**{k:p.get(k) for k in ('date','close','turnover')},'source_ref':ref})
+        c['price_history'] = sample
         c.pop('observations',None)
         c['selected_evidence'] = {k:{**{field:value for field,value in e.items() if field not in ('raw','payload_sha256','id')}, 'normalization_notes':e.get('raw',{}).get('normalization_notes',e.get('normalization_notes',''))} for k,e in c['selected_evidence'].items()}
+        for e in c['selected_evidence'].values():
+            note=e.pop('normalization_notes','')
+            if note:
+                key=sha256(note.encode()).hexdigest()[:16]
+                normalization_notes[key]=note
+                e['normalization_note_id']=key
     fresh = age_days(feed["observed_at"],now)
     return {"version":VERSION, "as_of":now.isoformat(), "database":db,"market_regime":"UNVERIFIED — no independently confirmed regime series",
         "market_freshness":{"observed_at":feed["observed_at"],"retrieved_at":feed["retrieved_at"],"age_days":fresh,
             "state":"FRESH SECONDARY OBSERVATION" if fresh is not None and fresh <= GATES["market_age_days"] else "STALE / UNAVAILABLE"},
         "coverage":{"registered":len(results),"eligible":sum(c["eligible"] for c in results),"with_primary_financials":sum(any(v.get("source_type") != "secondary" for v in c["selected_evidence"].values()) for c in results),"universe_status":"224 active equities discovered in six sectors as of 2026-10-01; secondary classification, official completeness verification pending"},
-        "technical":technical,"preliminary":preliminary,"top3":candidates,"top3_message":f"{len(candidates)} of 3 evidence-qualified candidates. " + ("No additional candidate currently meets the evidence threshold." if len(candidates)<3 else ""),
+        "corpus":corpus_summary(), "normalization_notes":normalization_notes, 'history_sources':history_sources, "technical":technical,"preliminary":preliminary,"top3":candidates,"top3_message":f"{len(candidates)} of 3 evidence-qualified candidates. " + ("No additional candidate currently meets the evidence threshold." if len(candidates)<3 else ""),
         "companies":results,"sectors":[{"slug":s,"name":name,"registered":sum(c["sector"]==s for c in results),"top3":rank([c for c in results if c["sector"]==s])} for s,name in SECTOR_NAMES.items()],
         "sources":SOURCES,"market_transports":feed.get("transports",[]),"discrepancies":[d for c in results for d in c["discrepancies"]],
         "config":{"weights":WEIGHTS,"gates":GATES,"scenarios":SCENARIOS},

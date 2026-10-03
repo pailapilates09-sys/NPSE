@@ -126,6 +126,7 @@ export default function Home() {
       </header>
 
       <div className="notice">Secondary market diagnostics. Observation: {data.provenance.market_observed_at ?? "Unavailable"}; finalized index history: {data.provenance.index_history_final_through ?? "Unavailable"}. Older history must not be interpreted as current investment evidence.</div>
+      <p><a href="/technical">Open completed-session price / volume research →</a></p>
       <section className="metrics">
         <Metric label="NEPSE" value={data.market.index == null ? "—" : fmt.format(data.market.index)} sub={pct(data.market.percent_change)} />
         <Metric label="Turnover" value={data.market.turnover == null ? "—" : `Rs ${compact.format(data.market.turnover)}`} sub={`${pct(data.market.turnover_vs_20d_pct)} vs 20-session avg`} />

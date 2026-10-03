@@ -54,7 +54,7 @@ def validate_observation(r):
         raise ValueError("Symbol is outside the registered universe")
     if timestamp(r["period_end"]) > timestamp(r["published_at"]) or timestamp(r["published_at"]) > timestamp(r["retrieved_at"]):
         raise ValueError("Publication/retrieval chronology is inconsistent")
-    if r["metric"] == "market_price" and (r["unit"] != "NPR" or not timestamp(r.get("market_timestamp")) or r["value"] <= 0):
+    if r["metric"] == "market_price" and (r["unit"] != "NPR" or not timestamp(r.get("market_timestamp")) or r["value"] <= 0 or timestamp(r['market_timestamp']) > timestamp(r['retrieved_at'])):
         raise ValueError("Market price requires NPR units, positive value and observation timestamp")
     if r["metric"] in ("eps","normalized_eps","book_value","distributable_eps") and r["unit"] != "NPR/share":
         raise ValueError("Per-share financials require NPR/share units")
@@ -75,7 +75,12 @@ def validate_observation(r):
         raise ValueError("Source type does not match the registered official domain")
     if not domain and r["source_type"] != "secondary":
         raise ValueError("Unknown authority type")
+    review_metrics = {'project_ppa_verified','project_operating','corporate_action_review','nfrs17_comparable',
+                     'reinsurance_review','reserve_adequacy_review','regulatory_liquidity_compliance',
+                     'regulatory_capital_compliance','regulatory_solvency_compliance','borrower_stress_review'}
+    if r['metric'] in review_metrics and (r['value'] not in (0,1) or r['source_type']=='secondary' or not r.get('normalization_notes')):
+        raise ValueError('Evidence review requires a primary source, documented review and 0/1 state')
     # Canonical units: ratios as fractions, currency NPR, diluted shares as count.
-    if r["metric"] in ("roe","sustainable_roe","roa","npl","capital_adequacy","premium_growth","eps_growth","combined_ratio","claims_ratio") and r["unit"] != "ratio":
+    if r["metric"] in ("roe","sustainable_roe","roa","npl","capital_adequacy","ccar","cd_ratio","net_liquidity","slr","crr","lar","premium_growth","eps_growth","combined_ratio","claims_ratio") and r["unit"] != "ratio":
         raise ValueError("Financial percentage metrics must be normalized fractions with unit ratio")
     return dict(r)

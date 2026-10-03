@@ -35,8 +35,15 @@ def prepare(directory):
             metrics = {'capital_adequacy':v[3]/100, 'npl':v[13]/100}
             if name == 'nrb-banks':
                 metrics.update(deposits=v[4]*1e6, loans=v[6]*1e6, interest_spread=v[12]/100, regulatory_net_npl=v[14]/100)
+                metrics.update(core_capital=v[0]*1e6, capital_fund=v[1]*1e6, ccar=v[2]/100,
+                               cd_ratio=v[8]/100, net_liquidity=v[9]/100, slr=v[10]/100, base_rate=v[11]/100)
             else:
                 metrics.update(deposits=v[5]*1e6, loans=v[7]*1e6, net_profit=v[15]*1e6, regulatory_roa=v[16]/100, regulatory_roe=v[17]/100, base_rate=v[18]/100)
+                metrics.update(core_capital=v[0]*1e6, capital_fund=v[1]*1e6, ccar=v[2]/100,
+                               public_deposits=v[4]*1e6, borrowings=v[6]*1e6, crr=v[10]/100,
+                               collateral_based_loan_ratio=v[14]/100)
+                for metric, col in [('lar',11),('slr',12)]:
+                    if v[col] is not None: metrics[metric]=v[col]/100
             entries.append({'symbol':symbol, 'reported_name':institution, 'metrics':metrics})
         reports.append({'source':'Nepal Rastra Bank — ' + name, 'source_type':'nrb', 'source_url':url, 'published_at':published, 'retrieved_at':now, 'period_end':'2026-07-16', 'reported_period':'2082/83 Asadh end — provisional regulatory basis', 'basis':'Amounts: NPR million converted to NPR. Percentages divided by 100. Microfinance regulatory ROE uses core capital, not accounting equity; it is kept separate from accounting ROE. Regulatory figures can differ from NFRS filings.', 'payload_sha256':hashlib.sha256((directory/(name+'.pdf')).read_bytes()).hexdigest(), 'companies':entries})
     companies = [
@@ -51,13 +58,13 @@ def prepare(directory):
     return {'prepared_at':now,'reports':reports}
 
 def observations(dataset):
-    ratios = {'roe','roa','npl','capital_adequacy','regulatory_roe','regulatory_roa','regulatory_net_npl','interest_spread','provision_coverage','funding_cost','base_rate','eps_growth','revenue_growth','deposit_growth','cash_conversion','solvency_ratio','earned_premium_growth','net_profit_growth','claims_ratio'}
+    ratios = {'roe','roa','npl','capital_adequacy','ccar','cd_ratio','net_liquidity','slr','crr','lar','collateral_based_loan_ratio','regulatory_roe','regulatory_roa','regulatory_net_npl','interest_spread','provision_coverage','funding_cost','base_rate','eps_growth','revenue_growth','deposit_growth','cash_conversion','solvency_ratio','earned_premium_growth','net_profit_growth','claims_ratio'}
     rows=[]
     for report in dataset['reports']:
         for company in report['companies']:
             for metric,value in company['metrics'].items():
                 unit = 'NPR/share' if metric in ('eps','book_value','distributable_eps') else 'ratio' if metric in ratios else 'shares' if metric=='shares' else 'NPR'
-                rows.append({**{k:report[k] for k in ('source','source_type','source_url','published_at','retrieved_at','period_end','reported_period')},'symbol':company['symbol'],'metric':metric,'value':value,'unit':unit,'normalization_state':'normalized','validation_status':'validated','normalization_notes':report['basis'],'market_timestamp':None})
+                rows.append({**{k:report[k] for k in ('source','source_type','source_url','published_at','retrieved_at','period_end','reported_period')},'symbol':company['symbol'],'metric':metric,'value':value,'unit':unit,'normalization_state':'normalized','validation_status':'validated','normalization_notes':report['basis'],'accounting_basis':'NRB provisional regulatory' if report['source_type']=='nrb' else 'filing as disclosed','period_basis':'annual','consolidation':'regulatory institution' if report['source_type']=='nrb' else 'standalone as disclosed','definition':metric,'market_timestamp':None})
     return rows
 
 if __name__=='__main__':

@@ -1,7 +1,7 @@
 """Explicit NPSE implementation choices; percentages are not investor prescriptions."""
-VERSION = "1.0.0-rc.1"
-WEIGHTS = {"quality": .20, "valuation": .20, "growth": .15, "strength": .15,
-           "governance": .10, "regime": .10, "liquidity": .10}
+VERSION = "1.1.0"
+# Pure business-quality weights. Valuation and timing have separate gates and outputs.
+WEIGHTS = {"quality": 1/3, "growth": .25, "strength": .25, "governance": 1/6}
 GATES = {"confidence": 75, "quality": 65, "timing": 50, "coverage": .80,
          "market_age_days": 3, "filing_age_days": 160, "min_history": 50,
          "min_turnover_20d": 1_000_000, "min_peers": 5, "margin_of_safety": .20}

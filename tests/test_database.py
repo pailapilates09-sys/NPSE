@@ -20,7 +20,7 @@ class DatabaseTests(unittest.TestCase):
             c.execute(sql.SQL("CREATE SCHEMA {}").format(sql.Identifier(cls.schema)))
         os.environ["DATABASE_URL"]=make_conninfo(cls.url,options="-c search_path="+cls.schema)
         database.migrate()
-        cls.company={"symbol":"NABIL","company":"SYNTHETIC DATABASE QA ONLY","sector":"banks","profile":{},"market":{"price":170,"observed_at":"2026-09-30T15:00:00","turnover":2_000_000}}
+        cls.company={"symbol":"NABIL","company":"SYNTHETIC DATABASE QA ONLY","sector":"banks","profile":{},"market":{"price":170,"observed_at":"2026-09-30T15:00:00","turnover":2_000_000,"completed_session":True,"source_type":"nepse"}}
         database.persist_market([cls.company],{"observed_at":"2026-09-30T15:00:00"},"https://example.com/qa","2026-10-01T02:00:00Z")
 
     @classmethod

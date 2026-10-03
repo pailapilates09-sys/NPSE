@@ -13,8 +13,8 @@ def observation(metric,value,source="Nabil filing",kind="company_quarterly",peri
     return {"symbol":"NABIL","metric":metric,"value":value,"unit":"NPR/share" if metric in ("eps","normalized_eps","book_value","distributable_eps") else "ratio","reported_period":period,"period_end":"2026-07-16","published_at":"2026-08-10T00:00:00+00:00","retrieved_at":"2026-08-11T00:00:00+00:00","source":source,"source_type":kind,"source_url":"https://nabilbank.com/filing.pdf","normalization_state":"normalized","validation_status":"validated","normalization_notes":"Synthetic unit-test earning power; never an admitted production filing"}
 
 def bank():
-    metrics={"eps":30,"normalized_eps":30,"book_value":200,"roe":.18,"sustainable_roe":.18,"npl":.02,"capital_adequacy":.14,"distributable_eps":20,"roa":.02,"nim":.05,"eps_growth":.15,"deposit_growth":.15,"provision_coverage":1.5,"governance":90,"sector_return_20d":.04}
-    return {"symbol":"NABIL","company":"Test fixture only","sector":"banks","observations":[observation(k,v) for k,v in metrics.items()],"market":{"price":170,"observed_at":"2026-09-30T15:00:00+05:45","verified":True},"price_history":[{"date":(NOW-timedelta(days=200-i)).date().isoformat(),"close":160,"turnover":2_000_000} for i in range(200)],"metrics":metrics}
+    metrics={"eps":30,"normalized_eps":30,"book_value":200,"roe":.18,"sustainable_roe":.18,"npl":.02,"capital_adequacy":.14,"distributable_eps":20,"roa":.02,"nim":.05,"eps_growth":.15,"deposit_growth":.15,"provision_coverage":1.5,"governance":90,"sector_return_20d":.04,"ccar":.12,"cd_ratio":.75,"net_liquidity":.30,"slr":.20,"regulatory_capital_compliance":1}
+    return {"symbol":"NABIL","company":"Test fixture only","sector":"banks","observations":[observation(k,v) for k,v in metrics.items()],"market":{"price":170,"observed_at":"2026-09-30T15:00:00+05:45","verified":True,"source_type":"nepse"},"price_history":[{"date":(NOW-timedelta(days=200-i)).date().isoformat(),"close":160,"turnover":2_000_000} for i in range(200)],"metrics":metrics}
 
 class Tests(unittest.TestCase):
     def test_ratio_invalid(self):
@@ -39,6 +39,7 @@ class Tests(unittest.TestCase):
         self.assertAlmostEqual(dcf["value"],(100*1.04/1.15+100*1.04**2/1.15**2)/10)
     def test_discrepancy_authority(self):
         a=observation("eps",30); b=observation("eps",40,"Secondary","secondary")
+        b["source_url"]="https://secondary.example/filing.pdf"
         sel,d,_=resolve([b,a],NOW.isoformat())
         self.assertEqual(sel["eps"]["value"],30); self.assertEqual(len(d),1)
     def test_different_periods_not_conflict(self):
@@ -71,8 +72,13 @@ class Tests(unittest.TestCase):
         self.assertTrue(all(c["state"]=="INSUFFICIENT DATA" for c in b["companies"]))
     def test_positive_candidate_requires_all_gates(self):
         c=bank()
-        peers=[{"metrics":{r["metric"]: (r["value"]*(.5+i*.05) if r["metric"] not in ("npl",) else .04+i*.005) for r in c["observations"]}} for i in range(6)]
-        for i,p in enumerate(peers):p["metrics"].update({"pb":2+i*.1,"pe":20+i,"turnover_20d":1_000_000+i*100_000})
+        peers=[]
+        for i in range(6):
+            p=deepcopy(c)
+            for o in p['observations']:
+                if o['metric']=='npl':o['value']=.04+i*.005
+                elif o['metric'] not in ('regulatory_capital_compliance',):o['value']*=.5+i*.05
+            peers.append(p)
         r=evaluate(c,peers,NOW)
         self.assertTrue(r["eligible"],r["gate_reasons"])
         c["market"]["verified"]=False

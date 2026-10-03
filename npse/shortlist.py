@@ -18,7 +18,7 @@ def screen(companies, now):
             decision='AVOID NEW EXPOSURE PENDING REVIEW'
         explanation=f"Reported NPL {npl*100:.2f}% and capital adequacy {car*100:.2f}%. "
         explanation += 'Passes this preliminary low-NPL / capital-buffer screen.' if stronger else 'Does not pass the preliminary NPL ≤3% and capital ≥12% screen.'
-        rows.append({'symbol':c['symbol'],'company':c['company'],'sector':c['sector'],'decision':decision,'npl':npl,'capital_adequacy':car,'price':c['market'].get('price'),'eps':m.get('eps'),'pe':m.get('pe'),'why':explanation,'next_step':'Confirm sustainable earnings, current price and valuation before committing money.','period_end':evidence['npl']['period_end'],'source_url':evidence['npl']['source_url']})
+        rows.append({'symbol':c['symbol'],'company':c['company'],'sector':c['sector'],'decision':decision,'npl':npl,'capital_adequacy':car,'price':c['market'].get('price'),'eps':m.get('eps'),'pe':m.get('reported_pe'),'why':explanation,'next_step':'Confirm sustainable earnings, current price and valuation before committing money.','period_end':evidence['npl']['period_end'],'source_url':evidence['npl']['source_url']})
     rows.sort(key=lambda r:(r['sector'],r['npl'],-r['capital_adequacy'],r['symbol']))
     banks=[r for r in rows if r['sector']=='banks' and r['decision']=='RESEARCH FIRST']
     micro=[r for r in rows if r['sector']=='microfinance' and r['decision']=='RESEARCH FIRST']
