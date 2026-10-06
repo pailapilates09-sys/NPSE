@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "checked_at": "2026-10-06",
+  "channels": [
+    {
+      "id": "issuer",
+      "name": "Company financial filings",
+      "authority": "PRIMARY ISSUER",
+      "url": "https://everestbankltd.com/wp-content/uploads/2026/08/4th-Quarterly-Financial-Report-of-Fiscal-Year-2082-83.pdf",
+      "source_ids": [],
+      "use": "Earnings, book value, capital, cash flow, dividends and company risks. This readable EBL quarterly report is one example; use each issuer’s own filing.",
+      "cadence": "Quarterly / annual / event driven",
+      "access": "EBL PDF read: 18 pages, unaudited FY2082/83 Q4. Selected issuer reports already admitted; universal automatic filing extraction is not connected.",
+      "limits": "A quarterly profit is not sustainable earnings. Publication availability, reporting basis and unit normalization must be retained."
+    },
+    {
+      "id": "nrb",
+      "name": "Nepal Rastra Bank",
+      "authority": "PRIMARY REGULATOR",
+      "url": "https://www.nrb.org.np/category/key-financial-indicators/?department=bsd",
+      "source_ids": [
+        "SRC-NPSE-003",
+        "SRC-NPSE-004"
+      ],
+      "use": "Bank and microfinance credit quality, capital and regulatory context. Follow NRB’s circulars and macroeconomic reports for policy and liquidity context.",
+      "cadence": "Quarterly indicators; policy and macro publications on their own dates",
+      "access": "Archive read: Mid-July 2026 bank indicators published 17 September 2026. Reviewed July extraction already connected; automatic refresh remains blocked.",
+      "limits": "Regulatory and issuer accounting definitions may differ. A new retrieval date does not make the July period current."
+    },
+    {
+      "id": "sebon",
+      "name": "SEBON",
+      "authority": "PRIMARY REGULATOR",
+      "url": "https://www.sebon.gov.np/",
+      "source_ids": [
+        "SRC-NPSE-010",
+        "SRC-NPSE-011",
+        "SRC-NPSE-012",
+        "SRC-NPSE-013"
+      ],
+      "use": "Regulatory notices, prospectuses and disclosure context. Verify issue details, effective dates and corporate actions from the actual notice.",
+      "cadence": "Event driven",
+      "access": "Homepage and notice/prospectus links read. Automatic event extraction is not connected.",
+      "limits": "Draft rules are proposals, not enacted requirements. No headline alone creates an adjusted-price factor."
+    },
+    {
+      "id": "nea",
+      "name": "Nepal Electricity Authority",
+      "authority": "PRIMARY UTILITY",
+      "url": "https://www.nea.org.np/en/detail/annual-report-20252026",
+      "source_ids": [
+        "SRC-NPSE-017",
+        "SRC-NPSE-018"
+      ],
+      "use": "Hydropower generation, transmission and power-system context; a starting point for PPA/project investigation.",
+      "cadence": "Annual report and project notices",
+      "access": "2025/2026 annual-report page and its download link read. Automatic plant/company extraction is not connected.",
+      "limits": "NEA-wide performance is not a listed hydropower company’s cash flow. Company PPA, generation, debt, project life and costs still need primary evidence."
+    },
+    {
+      "id": "sharesansar",
+      "name": "ShareSansar news and announcements",
+      "authority": "SECONDARY NEWS",
+      "url": "https://www.sharesansar.com/category/latest",
+      "source_ids": [
+        "SRC-NPSE-035"
+      ],
+      "use": "Discover shutdowns, repairs, AGMs, dividend notices, rights and filing updates. Follow the announcement archive as well.",
+      "cadence": "Check each requested daily update",
+      "access": "Latest and announcement pages read; one company news article entered in the manual journal. No automated news or financial feed.",
+      "limits": "Corroborate material claims with the issuer or regulator. News updates the research agenda; it cannot provide a reliable tomorrow-price prediction."
+    }
+  ]
+}

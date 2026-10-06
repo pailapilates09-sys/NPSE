@@ -14,7 +14,7 @@ SOURCES = [
  {"name":"YONEPSE", "type":"secondary market discovery", "url":"https://shubhamnpk.github.io/yonepse", "status":"Market adapter active; GitHub origin fallback when Pages is stale"},
  {"name":"Aabishkar2 / nepse-data", "type":"secondary daily price history", "url":"https://github.com/Aabishkar2/nepse-data", "status":"Historical CSV adapter available; admitted coverage shown by company. Unadjusted prices, not independent current-price confirmation"},
  {"name":"SocrateAI / nepse-open-data", "type":"secondary adjusted/unadjusted archive", "url":"https://github.com/socrateai-official/nepse-open-data", "status":"September 18, 2026 adjusted/unadjusted comparison snapshot connected. Provider adjustment factors are not a verified corporate-action ledger or today's quote"},
- {"name":"ShareSansar", "type":"secondary verification/discovery", "url":"https://www.sharesansar.com", "status":"Research citations; market/financial adapter not connected"},
+ {"name":"ShareSansar", "type":"secondary verification/discovery", "url":"https://www.sharesansar.com", "status":"Research citations and manually reviewed Daily Evidence journal; automatic news/market/financial adapter not connected"},
  {"name":"MeroLagani", "type":"secondary verification/discovery", "url":"https://merolagani.com", "status":"Not connected"},
  {"name":"NepseAlpha", "type":"secondary verification/discovery", "url":"https://nepsealpha.com", "status":"Not connected"},
 ]

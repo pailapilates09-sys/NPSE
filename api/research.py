@@ -23,11 +23,25 @@ class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         try:
-            query=parse_qs(urlparse(self.path).query)
+            query=parse_qs(urlparse(self.path).query,keep_blank_values=True)
+            if 'download' in query and (query['download'] not in (['csv'], ['json']) or set(query) != {'download'}):
+                return self.send_json(400,{'error':'invalid_export_query'})
             if 'rules' in query:
                 from npse.corpus import summary
                 return self.send_json(200,summary())
             board=build_research()
+            if 'download' in query:
+                from npse.exports import attachment
+                body, content_type, filename = attachment(board, query['download'][0])
+                self.send_response(200)
+                self.send_header('Content-Type',content_type)
+                self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
+                self.send_header('Cache-Control','no-store')
+                self.send_header('X-Content-Type-Options','nosniff')
+                self.send_header('Content-Length',str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+                return
             if "symbol" in query:
                 company=next((c for c in board["companies"] if c["symbol"]==query["symbol"][0].upper()),None)
                 if company:

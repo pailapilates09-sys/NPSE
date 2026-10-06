@@ -1,2 +1,3 @@
 import ResearchView from './research-view';
-export default function Page() { return <ResearchView path={[]} />; }
+import DailyContext from './daily/context';
+export default function Page() { return <><ResearchView path={[]} /><DailyContext/></>; }
