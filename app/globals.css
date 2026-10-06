@@ -11,6 +11,39 @@
   color-scheme: light;
 }
 
+.learning-banner { padding: 12px 24px; text-align: center; color: var(--muted); background: #e8f2f1; font-size: 14px; border-bottom: 1px solid var(--line); }
+.learning-banner a { color: var(--accent); font-weight: 650; }
+.learning-shell { max-width: 1180px; }
+.learning-shell section[id] { scroll-margin-top: 24px; }
+.learning-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 20px; }
+.learning-actions a { padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.learning-toc { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding: 22px; }
+.learning-toc a { font-weight: 600; }
+.learning-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.learning-tile { background: var(--panel-2); padding: 20px; border-radius: 10px; }
+.learning-tile h3 { margin-top: 0; }
+.learning-callout { margin: 20px 0; padding: 20px; background: #e8f2f1; border-left: 4px solid var(--accent); border-radius: 8px; line-height: 1.7; }
+.learning-steps { padding-left: 25px; }
+.learning-steps li { margin-bottom: 18px; padding-left: 6px; }
+.learning-shell details { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 20px; }
+.learning-shell summary { cursor: pointer; color: var(--accent); font-weight: 650; }
+.learning-shell td,.learning-shell th { white-space: normal; font-size: 14px; vertical-align: top; min-width: 140px; }
+.learning-glossary dt { font-weight: 700; margin-top: 16px; }
+.learning-glossary dd { margin: 4px 0 0; color: var(--muted); max-width: 78ch; }
+.learning-code { white-space: pre-wrap; overflow-wrap: anywhere; padding: 18px; background: var(--panel-2); border-radius: 8px; font-size: 15px; }
+.learning-export { border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); padding: 20px; }
+.workspace-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; margin-top: 28px; }
+.workspace-controls label { display: grid; gap: 6px; font-weight: 600; flex: 1 1 250px; }
+.workspace-controls input,.workspace-controls select { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); font: inherit; }
+.workspace-entry { padding: 24px; }
+.workspace-entry h2 { font-size: 22px; line-height: 1.4; margin: 12px 0; }
+.workspace-entry p { color: var(--muted); }
+.workspace-entry-top { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.workspace-entry-top .badge { font-size: 10px; }
+.learning-footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 20px; }
+.learning-footer p { width: 100%; color: var(--muted); font-size: 13px; }
+@media (max-width: 760px) { .learning-grid,.learning-toc { grid-template-columns: 1fr; } .workspace-entry { padding: 18px; } .learning-banner { text-align: left; } }
+
 * { box-sizing: border-box; }
 html { background: var(--bg); }
 body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.6; }
