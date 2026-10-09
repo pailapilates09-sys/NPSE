@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "verified_at": "2026-10-09",
+  "root_folder": "https://drive.google.com/drive/folders/1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN",
+  "archive": "https://drive.google.com/file/d/1S-kLr-gfo5tqkQ4iSeAg13uIkP_aaKQ2/view",
+  "files": [
+    {
+      "key": "daily",
+      "kind": "sheet",
+      "title": "Paila Daily Capture Rebuilt",
+      "fileId": "1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit?usp=drivesdk",
+      "parentId": "1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "key": "source_manifest",
+      "kind": "sheet",
+      "title": "NPSE Source Manifest Recovered",
+      "fileId": "1yhMv8dJk4p2IF0o7UzSPll5GzhOIQZWDYsA7VrT76-c",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1yhMv8dJk4p2IF0o7UzSPll5GzhOIQZWDYsA7VrT76-c/edit?usp=drivesdk",
+      "parentId": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "source_register",
+      "kind": "sheet",
+      "title": "NPSE Source Register Recovered",
+      "fileId": "1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ/edit?usp=drivesdk",
+      "parentId": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "parsed",
+      "kind": "sheet",
+      "title": "NPSE Parsed Knowledge Recovered",
+      "fileId": "1qh5awhJcBRZNtrSykuoFa2rp-smhJOECMOfoISFb9xM",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1qh5awhJcBRZNtrSykuoFa2rp-smhJOECMOfoISFb9xM/edit?usp=drivesdk",
+      "parentId": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "inventory",
+      "kind": "sheet",
+      "title": "09 Recovery Inventory",
+      "fileId": "1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM",
+      "mimeType": "application/vnd.google-apps.spreadsheet",
+      "url": "https://docs.google.com/spreadsheets/d/1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM/edit?usp=drivesdk",
+      "parentId": "1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN"
+    },
+    {
+      "key": "studio_reference",
+      "kind": "doc",
+      "title": "Paila Studio Recovered Reference",
+      "fileId": "1tIrow8u2Fl4HWVkDNowAWr79ay0x1hu7IpN_jwkTCfk",
+      "mimeType": "application/vnd.google-apps.document",
+      "url": "https://docs.google.com/document/d/1tIrow8u2Fl4HWVkDNowAWr79ay0x1hu7IpN_jwkTCfk/edit?usp=drivesdk",
+      "parentId": "1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "key": "npse_reference",
+      "kind": "doc",
+      "title": "NPSE Implementation Recovered Reference",
+      "fileId": "12dxLTgYr8rWk94bDHQ7KBHyQOwE1uEGp6Rm-NEOhQb8",
+      "mimeType": "application/vnd.google-apps.document",
+      "url": "https://docs.google.com/document/d/12dxLTgYr8rWk94bDHQ7KBHyQOwE1uEGp6Rm-NEOhQb8/edit?usp=drivesdk",
+      "parentId": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "methods",
+      "kind": "doc",
+      "title": "NPSE Recovered Methods and Formulas",
+      "fileId": "1RyKjsgRSJnYVXkO0qaix8EDOGAo6KiOb15bNEfFbEmo",
+      "mimeType": "application/vnd.google-apps.document",
+      "url": "https://docs.google.com/document/d/1RyKjsgRSJnYVXkO0qaix8EDOGAo6KiOb15bNEfFbEmo/edit?usp=drivesdk",
+      "parentId": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    }
+  ],
+  "link_replacements": [
+    {
+      "entry_id": "daily-sheet",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit"
+    },
+    {
+      "entry_id": "daily-close",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit#gid=1273071050",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit#gid=867997284"
+    },
+    {
+      "entry_id": "sessions",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit#gid=1506191114",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit#gid=1222592882"
+    },
+    {
+      "entry_id": "finance",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit#gid=83563512",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit#gid=1792683469"
+    },
+    {
+      "entry_id": "manager-view",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit#gid=787171983",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit#gid=717330368"
+    },
+    {
+      "entry_id": "definitions",
+      "original_url": "https://docs.google.com/spreadsheets/d/13um0MJkeGd3k_pRDQMu3L0FXJp1BErI8KpY7K8V9kZg/edit#gid=1912475582",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit#gid=1720913468"
+    },
+    {
+      "entry_id": "guide-originals",
+      "original_url": "https://drive.google.com/drive/folders/1Z5MSk0Kpor-CC3L85oQBN6Ejv7kIZkK0",
+      "replacement_url": "https://drive.google.com/file/d/1S-kLr-gfo5tqkQ4iSeAg13uIkP_aaKQ2/view"
+    },
+    {
+      "entry_id": "drive",
+      "original_url": "https://drive.google.com/drive/folders/10HMM1fS_cXtonuJYusyQD3tkOS75ODqT",
+      "replacement_url": "https://drive.google.com/drive/folders/1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN"
+    },
+    {
+      "entry_id": "website-sources",
+      "original_url": "https://drive.google.com/drive/folders/1MvcxYYHWsKxkEBx9dhhnTbTi1e3v9rjb",
+      "replacement_url": "https://drive.google.com/drive/folders/1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "entry_id": "business-sources",
+      "original_url": "https://drive.google.com/drive/folders/1r4P9WFmA7pLXrwnC0AhsNopufdahVwMO",
+      "replacement_url": "https://drive.google.com/drive/folders/1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "entry_id": "sop-sources",
+      "original_url": "https://drive.google.com/drive/folders/15uLe-RDbdX_G9TGf9q-Cz9l8I7sbXSMF",
+      "replacement_url": "https://drive.google.com/drive/folders/1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "entry_id": "project-drive",
+      "original_url": "https://drive.google.com/drive/folders/1UKFd1UGWrqDDkygDfckJxRxYJsxdYyoW",
+      "replacement_url": "https://drive.google.com/drive/folders/1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN"
+    },
+    {
+      "entry_id": "research-root",
+      "original_url": "https://drive.google.com/drive/folders/1tSuS0DTZi1EGru-CBvzE_b_Fr-5HGLlg",
+      "replacement_url": "https://drive.google.com/drive/folders/1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "entry_id": "manifest",
+      "original_url": "https://docs.google.com/spreadsheets/d/17hdoQg34fgVWNTLw7OwdxCEhCcbvCucUaTmUMQst8Nw/edit",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1yhMv8dJk4p2IF0o7UzSPll5GzhOIQZWDYsA7VrT76-c/edit"
+    },
+    {
+      "entry_id": "register",
+      "original_url": "https://docs.google.com/spreadsheets/d/11ZbKruB6mWtAE2VdM58Npsavd1JnECkdn4y86aPcObw/edit",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ/edit"
+    },
+    {
+      "entry_id": "parsed",
+      "original_url": "https://docs.google.com/spreadsheets/d/1vtwYXj7j3IEgayg0Yq_-uYOyB2uwLg6uQXQU8772hVg/edit",
+      "replacement_url": "https://docs.google.com/spreadsheets/d/1qh5awhJcBRZNtrSykuoFa2rp-smhJOECMOfoISFb9xM/edit"
+    },
+    {
+      "entry_id": "formulas",
+      "original_url": "https://docs.google.com/document/d/1C9JX-WOCLTe2m2WgqwjKDVXpF1G1gn_lw6OGq5nydJo/edit",
+      "replacement_url": "https://docs.google.com/document/d/1RyKjsgRSJnYVXkO0qaix8EDOGAo6KiOb15bNEfFbEmo/edit"
+    },
+    {
+      "entry_id": "archive",
+      "original_url": "https://drive.google.com/drive/folders/1Ngsd9557CWnoyThsL7lLQokshK3coGGI",
+      "replacement_url": "https://drive.google.com/file/d/1S-kLr-gfo5tqkQ4iSeAg13uIkP_aaKQ2/view"
+    }
+  ],
+  "limits": [
+    "Original operational rows, approvals, comments and revision history were unavailable.",
+    "Recovered research rows are the saved 2026-10-03 snapshot.",
+    "Linked Sheet edits do not automatically change website reports or engine calculations.",
+    "The existing Vercel site is reachable, but hosting management access cannot locate its project. GitHub Pages serves this recovery directory independently."
+  ]
+}

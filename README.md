@@ -51,3 +51,7 @@ Banks/microfinance: justified P/B and normalized P/E. Hydro/manufacturing: EV-to
 Reuse the existing GitHub-to-Vercel project. Verify CI, commit/deployment parity, APIs, representative companies in all six models and source-health states before declaring success. Rollback commit `615b14b865372ad758212525440b05ae7cd1ea7d` is preserved in `rollback/before-investment-engine-20261001`; deploying it should preserve subsequent history.
 
 GitHub holds source, tests and secondary discovery metadata. Live observations, financials, history, actions, features and snapshots belong in Postgres. Storage structures do not prove operational ingestion. See SOURCES.md and docs/READINESS.md.
+
+## 09 recovery links
+
+[Recovery files, live pages and ownership](docs/DRIVE_RECOVERY_09.md) records the native 09 Docs and Sheets. [Open this repository](https://github.com/pailapilates09-sys/NPSE).
