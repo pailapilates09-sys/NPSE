@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "closeout_id": "CLOSEOUT-09-RECOVERY-20261009",
+  "repository_full_name": "pailapilates09-sys/NPSE",
+  "date": "2026-10-09",
+  "timezone": "Asia/Kathmandu",
+  "status": "RECOVERY_CLOSED_WITH_RECORDED_GAPS",
+  "scope": "Recovery of the available saved Drive references/templates, mapping them to 09 repositories, and publishing reachable resource directories. Not a complete restoration of all historical private files or full production integration.",
+  "pre_commit_sha": "474ed0da2a71417ecabf019975187fec0036a3a4",
+  "closeout_branch": "closeout/09-recovery-20261009",
+  "final_commit_resolution": "Read refs/heads/closeout/09-recovery-20261009 from GitHub; the source record cannot contain its own commit SHA.",
+  "completed": {
+    "native_files": 8,
+    "native_files_provider_listing_rechecked": true,
+    "links_published": true,
+    "original_ids_preserved": true,
+    "public_customer_navigation_has_no_internal_backlink": true,
+    "prior_native_import_value_check": {
+      "source_manifest": 37,
+      "source_register": 37,
+      "parsed_knowledge": 116,
+      "total": 190,
+      "saved_research_snapshot": "2026-10-03",
+      "note": "Exact saved-workbook value comparisons passed during import on 2026-10-09; not a current market/regulatory verification."
+    }
+  },
+  "artifact_links": [
+    {
+      "key": "daily",
+      "file_id": "1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk",
+      "kind": "sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1Nd3rozgFbK7yypC5HxKNyHjTkpMckjlyH1OIOPnIpAk/edit?usp=drivesdk",
+      "parent_id": "1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "key": "source_manifest",
+      "file_id": "1yhMv8dJk4p2IF0o7UzSPll5GzhOIQZWDYsA7VrT76-c",
+      "kind": "sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1yhMv8dJk4p2IF0o7UzSPll5GzhOIQZWDYsA7VrT76-c/edit?usp=drivesdk",
+      "parent_id": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "source_register",
+      "file_id": "1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ",
+      "kind": "sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ/edit?usp=drivesdk",
+      "parent_id": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "parsed",
+      "file_id": "1qh5awhJcBRZNtrSykuoFa2rp-smhJOECMOfoISFb9xM",
+      "kind": "sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1qh5awhJcBRZNtrSykuoFa2rp-smhJOECMOfoISFb9xM/edit?usp=drivesdk",
+      "parent_id": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "inventory",
+      "file_id": "1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM",
+      "kind": "sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM/edit?usp=drivesdk",
+      "parent_id": "1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN"
+    },
+    {
+      "key": "studio_reference",
+      "file_id": "1tIrow8u2Fl4HWVkDNowAWr79ay0x1hu7IpN_jwkTCfk",
+      "kind": "doc",
+      "url": "https://docs.google.com/document/d/1tIrow8u2Fl4HWVkDNowAWr79ay0x1hu7IpN_jwkTCfk/edit?usp=drivesdk",
+      "parent_id": "1TeaVeI9fXknkeQW8mTs_476no7fMRFey"
+    },
+    {
+      "key": "npse_reference",
+      "file_id": "12dxLTgYr8rWk94bDHQ7KBHyQOwE1uEGp6Rm-NEOhQb8",
+      "kind": "doc",
+      "url": "https://docs.google.com/document/d/12dxLTgYr8rWk94bDHQ7KBHyQOwE1uEGp6Rm-NEOhQb8/edit?usp=drivesdk",
+      "parent_id": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    },
+    {
+      "key": "methods",
+      "file_id": "1RyKjsgRSJnYVXkO0qaix8EDOGAo6KiOb15bNEfFbEmo",
+      "kind": "doc",
+      "url": "https://docs.google.com/document/d/1RyKjsgRSJnYVXkO0qaix8EDOGAo6KiOb15bNEfFbEmo/edit?usp=drivesdk",
+      "parent_id": "1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj"
+    }
+  ],
+  "provider_observations": [
+    {
+      "surface": "Operator",
+      "url": "https://pailapilates09-sys.github.io/Operator/workspace/links.json",
+      "http_status": 200,
+      "expected_content_present": true,
+      "observed_at": "2026-10-09T12:57:21.369005+00:00"
+    },
+    {
+      "surface": "Customer",
+      "url": "https://pailapilates09-sys.github.io/Customer/",
+      "http_status": 200,
+      "expected_content_present": true,
+      "observed_at": "2026-10-09T12:57:21.429402+00:00"
+    },
+    {
+      "surface": "NPSE",
+      "url": "https://pailapilates09-sys.github.io/NPSE/workspace/",
+      "http_status": 200,
+      "expected_content_present": true,
+      "observed_at": "2026-10-09T12:57:21.533166+00:00"
+    },
+    {
+      "surface": "NPSE-engine",
+      "url": "https://npse-pailapilates09.vercel.app/",
+      "http_status": 200,
+      "expected_content_present": true,
+      "observed_at": "2026-10-09T12:57:21.473141+00:00"
+    },
+    {
+      "surface": "NPSE-api",
+      "url": "https://npse-pailapilates09.vercel.app/api/research",
+      "http_status": 200,
+      "expected_content_present": true,
+      "observed_at": "2026-10-09T12:57:25.322690+00:00",
+      "database": {
+        "state": "CONNECTED",
+        "connected": true,
+        "schema_version": 1
+      },
+      "coverage": {
+        "registered": 224,
+        "eligible": 0,
+        "with_primary_financials": 71,
+        "universe_status": "224 active equities discovered in six sectors as of 2026-10-01; secondary classification, official completeness verification pending"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "validated_migration_workflows": [
+    {
+      "name": "Publish website",
+      "id": 37930541337,
+      "commit": "474ed0da2a71417ecabf019975187fec0036a3a4",
+      "conclusion": "success",
+      "url": "https://github.com/pailapilates09-sys/NPSE/actions/runs/37930541337"
+    },
+    {
+      "name": "Verify investment engine",
+      "id": 37930541335,
+      "commit": "474ed0da2a71417ecabf019975187fec0036a3a4",
+      "conclusion": "success",
+      "url": "https://github.com/pailapilates09-sys/NPSE/actions/runs/37930541335"
+    }
+  ],
+  "rollback": {
+    "migration_pre_branch": "rollback/before-09-drive-links-20261009",
+    "record_pre_commit_sha": "474ed0da2a71417ecabf019975187fec0036a3a4",
+    "method": "Git history preserves code PRE/POST. No native Drive content was changed by this closeout."
+  },
+  "governance": {
+    "public_source_repo": "FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph",
+    "verified_source_commit": "a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857",
+    "source_access": "PUBLIC_READ_VERIFIED",
+    "source_repository_write_access": false,
+    "namespace_state": {
+      "A7": "ACTIVE public semantic control plane",
+      "A8": "EXTERNAL_RESERVED separate PailaPilates10 namespace",
+      "A9": "EXTERNAL_RESERVED separate historical Drive governance"
+    },
+    "paila09_central_registration": "NOT_PRESENT_IN_READ_DIRECTORY",
+    "scope_boundary": "External A7 routing controls have been read and referenced. No namespace rename, private A9 parity, Main ACK or full federation is asserted.",
+    "pointers": [
+      {
+        "path": "A7_READ_FIRST.md",
+        "role": "Public A7 entrypoint",
+        "url": "https://github.com/FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph/blob/a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857/A7_READ_FIRST.md"
+      },
+      {
+        "path": "A9_GIT_DRIVE_BOOTSTRAP.json",
+        "role": "Current public cross-provider routing contract",
+        "url": "https://github.com/FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph/blob/a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857/A9_GIT_DRIVE_BOOTSTRAP.json"
+      },
+      {
+        "path": "docs/A9_GIT_DRIVE_OPERATING_RULE.md",
+        "role": "Git/Drive ownership and historical migration boundary",
+        "url": "https://github.com/FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph/blob/a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857/docs/A9_GIT_DRIVE_OPERATING_RULE.md"
+      },
+      {
+        "path": "registry/entities/systems.json",
+        "role": "A7/A8/A9 namespace separation",
+        "url": "https://github.com/FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph/blob/a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857/registry/entities/systems.json"
+      },
+      {
+        "path": "registry/entities/repositories.json",
+        "role": "Public repository directory",
+        "url": "https://github.com/FabinGurung/JP_A7_System_Registry_and_Knowledge_Graph/blob/a2d7ed5d33c0b3d070f1e185ea3a070cd4a84857/registry/entities/repositories.json"
+      }
+    ]
+  },
+  "outstanding": [
+    {
+      "id": "GAP-09-001",
+      "status": "BLOCKED",
+      "owner": "Original Drive source provider",
+      "description": "Original working/governance Docs, studio operational rows, approvals, comments, revisions and Local/Main registrar contents were not recovered. Rebuilt references and templates do not replace their historical authority."
+    },
+    {
+      "id": "GAP-09-002",
+      "status": "INCOMPLETE",
+      "owner": "Operator data integration",
+      "description": "The daily Sheet is linked and editable, but automatic export/ingestion/scheduling/authenticated reporting is not connected. Studio OS uses fictional review data."
+    },
+    {
+      "id": "GAP-09-003",
+      "status": "BLOCKED",
+      "owner": "NPSE hosting management access",
+      "description": "The current public Vercel site and API work, and the API reports a connected database. The hosting management connector could not locate the existing project/deployment, so redeploying the separate server app is unverified. The new recovery links are published independently on GitHub Pages."
+    },
+    {
+      "id": "GAP-09-004",
+      "status": "NOT_ADOPTED",
+      "owner": "External A7 registry owner",
+      "description": "The verified external A7 repository directory does not register the three pailapilates09-sys repositories. No central A7 sequence, registration, private Main Library write or ACK is claimed. Public control pointers are references, not a silent rename or full private-control migration."
+    },
+    {
+      "id": "GAP-09-005",
+      "status": "PREVIEW",
+      "owner": "Customer launch",
+      "description": "Public site remains a review preview; booking, payments and member authentication are inactive. Owner launch decisions are separate from this recovery closeout."
+    }
+  ],
+  "record_publication_gate": "Repository readback and successful owner Actions runs must be checked after the record is committed. Final publication receipts are in GitHub commit/branch/Actions provider state.",
+  "owner_visual_review": "Deferred to owner as requested; functional provider/deployment checks only."
+}
