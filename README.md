@@ -1,10 +1,12 @@
 # NPSE Investment Decision Engine
 
-Release candidate **1.0.0-rc.1**, built on the existing Control Tower. The Decision Board is the homepage; the former market tracker is at `/diagnostics`.
+**NPSE 09 is the working project.** Use [this repository](https://github.com/pailapilates09-sys/NPSE) for code and rules, the [Pages operating map](https://pailapilates09-sys.github.io/NPSE/) for navigation, and [09 Google Drive](https://drive.google.com/drive/folders/1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj) for editable research. The [Decision Board](https://npse-pailapilates09.vercel.app/) and Python API run on Vercel.
+
+The research engine helps identify which companies merit deeper research, at what price and under what conditions, and what evidence would invalidate the thesis. The older market tracker is available at `/diagnostics`.
 
 ## Actual readiness
 
-Six sector models, explainable scoring, scenario valuations, timing/confidence gates, company/sector pages, provenance and Postgres schema are implemented. **This is not yet a finished investment-data service.** Authoritative financial ingestion, official market confirmation and live Postgres must be connected and verified. No positive ranking is issued from prices alone; performance results are withheld without point-in-time and adjusted outcome history.
+Six sector models, explainable scoring, scenario valuations, evidence gates and company-level provenance are implemented. The live research API reports database connectivity and evidence coverage. Official market confirmation, deeper normalized financial coverage and adjusted price history are still needed. A company only qualifies when it meets the evidence gates.
 
 The discovery registry contains 224 active equities across commercial banks, hydro, manufacturing, microfinance, life insurance and non-life insurance, using secondary metadata retrieved 2026-10-01. Official exchange completeness remains unverified. Official company-domain admission is initially registered for NABIL, CHCL, SHIVM, CBBL, NLIC and SICL; further company domains need verification.
 
@@ -48,10 +50,10 @@ Banks/microfinance: justified P/B and normalized P/E. Hydro/manufacturing: EV-to
 
 ## Deployment and rollback
 
-Reuse the existing GitHub-to-Vercel project. Verify CI, commit/deployment parity, APIs, representative companies in all six models and source-health states before declaring success. Rollback commit `615b14b865372ad758212525440b05ae7cd1ea7d` is preserved in `rollback/before-investment-engine-20261001`; deploying it should preserve subsequent history.
+GitHub Actions tests the engine and publishes the static Pages site. The server app is deployed separately to the existing Vercel project. Verify the deployed commit and public runtime before claiming Vercel received a GitHub update. See the [09 hosting notes](docs/HOSTING_MIGRATION_09.md) for the boundary and rollback references.
 
 GitHub holds source, tests and secondary discovery metadata. Live observations, financials, history, actions, features and snapshots belong in Postgres. Storage structures do not prove operational ingestion. See SOURCES.md and docs/READINESS.md.
 
-## 09 recovery links
+## Working directory and recovery records
 
-[Recovery files, live pages and ownership](docs/DRIVE_RECOVERY_09.md) records the native 09 Docs and Sheets. [Open this repository](https://github.com/pailapilates09-sys/NPSE).
+The [09 Workspace](https://pailapilates09-sys.github.io/NPSE/workspace/) links the verified working Docs, Sheets and tools. After editing `data/workspace-links.json`, run `python scripts/sync_workspace.py` to refresh the static Pages directory. The [October recovery record](docs/DRIVE_RECOVERY_09.md) preserves the historical context.

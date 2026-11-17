@@ -1,31 +1,18 @@
-# Hosting migration to pailapilates09-sys
+# NPSE 09 working project and hosting
 
-The original NPSE Git history and nine branches are preserved. The baseline is
-`dd457c9a11f89df462fe93c0bbd126f0d7c783b9`; the pre-hosting rollback branch is
-`rollback/before-09-hosting-20261009`.
+The 09 repository and its recovered 09 Drive are the working authorities, confirmed 17 November 2026. The original 10 repository, old URLs and unrecovered Drive references are historical. The original Git history and nine branches were restored; the pre-hosting rollback is `rollback/before-09-hosting-20261009` at `dd457c9`.
 
-- Source: https://github.com/pailapilates09-sys/NPSE
-- Full app: https://npse-pailapilates09.vercel.app/
-- GitHub Pages entry: https://pailapilates09-sys.github.io/NPSE/
+| Surface | Working link | Role |
+| --- | --- | --- |
+| GitHub | [pailapilates09-sys/NPSE](https://github.com/pailapilates09-sys/NPSE) | Code, rules, documentation, and published commit history. |
+| GitHub Pages | [Operating map](https://pailapilates09-sys.github.io/NPSE/) · [09 Workspace](https://pailapilates09-sys.github.io/NPSE/workspace/) | Static project entry and searchable directory of working links. |
+| Google Drive | [NPSE — Recovered Research](https://drive.google.com/drive/folders/1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj) | Editable research references; the recovery inventory and branch backups are linked in the Workspace. |
+| Vercel | [NPSE Decision Board](https://npse-pailapilates09.vercel.app/) | Next.js app, research screens and Python API. |
+| Neon/PostgreSQL | [Research API](https://npse-pailapilates09.vercel.app/api/research) reports runtime connectivity | Historical observations and saved research results. |
 
-GitHub Pages publishes the entry page and forwards deep links to the full app.
-The Next.js app and Python research APIs run on Vercel, which supplies their
-server runtime. Pages cannot replace that runtime.
+## How changes reach users
 
-The existing Vercel project `npse-control-tower` is retained to preserve its
-authorized Neon/Postgres connection, observations, research snapshots, ingestion
-authorization and daily cron configuration. Production deployments now take
-their source from `pailapilates09-sys/NPSE`. Database migrations are not rerun and
-credentials are not copied into GitHub. The Vercel project and database remain
-in the existing provider account; this is a source and website migration, not
-a transfer of provider account ownership.
-
-GitHub Actions automatically republishes the Pages entry. For a full app update,
-deploy the new `main` SHA to the existing Vercel project using its authenticated
-deployment connection. Automatic Git-to-Vercel linking is a separate provider
-setting. Do not remove the existing project or create a second empty database.
-
-The original governance, research sources, daily journal, sector models,
-uncertainty gates and learning pages are retained. Drive document links continue
-to point to their original artifacts. Hosting migration does not turn historical
-source evidence into current market data.
+- **Verify investment engine** runs the Next.js build and Python tests with disposable PostgreSQL. **Publish website** publishes the tracked `pages/` directory when `main` is updated.
+- The app and Pages directory share `data/workspace-links.json`. Refresh the tracked Pages files with `python scripts/sync_workspace.py` and verify them with `python scripts/sync_workspace.py --check`. The [October recovery commit](https://github.com/pailapilates09-sys/NPSE/blob/05ce202bfcc5f6488b274d1ecec885cffb7411d5/data/workspace-links.json) preserves superseded original references.
+- Verify Pages and Vercel separately. Confirm the existing Vercel project's Git link, deploy the tested commit from 09 `main`, and read back its public Workspace and research API before declaring the app updated. Hosting management access and automatic deployment from the 09 repo were unverified when this note was updated.
+- Preserve the existing Vercel project and connected database across app releases. Editing a Drive research reference does not automatically import or recalculate data.

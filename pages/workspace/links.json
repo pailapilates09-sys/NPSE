@@ -1,8 +1,28 @@
 {
-  "version": "1.1",
-  "reviewed_at": "2026-10-09",
+  "version": "1.2",
+  "reviewed_at": "2026-11-17",
   "engine_baseline": "1.1.0",
   "entries": [
+    {
+      "id": "operating-map",
+      "group": "Start here",
+      "title": "NPSE 09 operating map",
+      "url": "https://pailapilates09-sys.github.io/NPSE/#operating-map",
+      "purpose": "Understand what the website, GitHub Actions, Google Drive and database do.",
+      "how": "Start with the project tree, then read why the research panels are there.",
+      "status": "WORKING SITE",
+      "note": "This static map is published through GitHub Pages."
+    },
+    {
+      "id": "pages-workspace",
+      "group": "Start here",
+      "title": "GitHub Pages Workspace",
+      "url": "https://pailapilates09-sys.github.io/NPSE/workspace/",
+      "purpose": "Open the current set of 09 Drive and project links.",
+      "how": "Search by document name, provider or tool.",
+      "status": "WORKING DIRECTORY",
+      "note": "Publishes through GitHub Pages separately from the Vercel app."
+    },
     {
       "id": "how-to",
       "group": "Start here",
@@ -116,34 +136,12 @@
     {
       "id": "project-drive",
       "group": "Evidence and documents",
-      "title": "NPSE project folder",
-      "url": "https://drive.google.com/drive/folders/1SCI8hUShK2IsaaF3mXW6U_wlZmEJ4VxN",
-      "purpose": "Find the governed research and audit folders.",
-      "how": "Open recovered native files or download the preserved source ZIP.",
-      "status": "RECOVERY HOME VERIFIED",
-      "note": "New 09 recovery home. Original source archive files absent from the repositories remain unavailable.",
-      "original_url": "https://drive.google.com/drive/folders/1UKFd1UGWrqDDkygDfckJxRxYJsxdYyoW"
-    },
-    {
-      "id": "research-root",
-      "group": "Evidence and documents",
-      "title": "Research Library",
+      "title": "NPSE 09 working Drive",
       "url": "https://drive.google.com/drive/folders/1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj",
-      "purpose": "Find the completed corpus without restarting the literature review.",
-      "how": "Open recovered native files or download the preserved source ZIP.",
-      "status": "RECOVERY HOME VERIFIED",
-      "note": "New 09 recovery home. Original source archive files absent from the repositories remain unavailable.",
-      "original_url": "https://drive.google.com/drive/folders/1tSuS0DTZi1EGru-CBvzE_b_Fr-5HGLlg"
-    },
-    {
-      "id": "research-first",
-      "group": "Evidence and documents",
-      "title": "Research READ FIRST v1.1",
-      "url": "https://docs.google.com/document/d/12zbciwAPEpeCKCz2Vq2wCj55b73bPpJRLbIlIziHM08/edit",
-      "purpose": "Identify the current corpus and its reading order.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
+      "purpose": "The working folder for the NPSE research Sheets and Docs.",
+      "how": "Open the source manifest, source register, parsed knowledge, methods or implementation reference.",
+      "status": "WORKING DRIVE",
+      "note": "This is the active NPSE folder in 09 Drive. It contains the verified recovered copies."
     },
     {
       "id": "manifest",
@@ -153,19 +151,17 @@
       "purpose": "Map all 37 source IDs to citations, URLs and archive states.",
       "how": "Look up the source ID shown on a company page.",
       "status": "RECOVERED COPY VERIFIED",
-      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine.",
-      "original_url": "https://docs.google.com/spreadsheets/d/17hdoQg34fgVWNTLw7OwdxCEhCcbvCucUaTmUMQst8Nw/edit"
+      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine."
     },
     {
       "id": "register",
       "group": "Evidence and documents",
-      "title": "Original Source Register · recovered 09 copy",
+      "title": "Source Register · recovered 09 copy",
       "url": "https://docs.google.com/spreadsheets/d/1H1Mms61Gh00ogIAZGeyrPksZrvubOYwt4AIee9zs7MQ/edit",
       "purpose": "Read evidence scope, extracted use and freshness rules.",
       "how": "Use alongside the formal manifest, not as an automatic data import.",
       "status": "RECOVERED COPY VERIFIED",
-      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine.",
-      "original_url": "https://docs.google.com/spreadsheets/d/11ZbKruB6mWtAE2VdM58Npsavd1JnECkdn4y86aPcObw/edit"
+      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine."
     },
     {
       "id": "parsed",
@@ -175,18 +171,7 @@
       "purpose": "Inspect machine-readable financial implementation authority.",
       "how": "Read SectorRules, InvestorPrinciples, FormulaRegistry, AuthorityMap, ImplementationMapping and EvidenceGaps.",
       "status": "RECOVERED COPY VERIFIED",
-      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine.",
-      "original_url": "https://docs.google.com/spreadsheets/d/1vtwYXj7j3IEgayg0Yq_-uYOyB2uwLg6uQXQU8772hVg/edit"
-    },
-    {
-      "id": "literature",
-      "group": "Evidence and documents",
-      "title": "Literature Review v1.1",
-      "url": "https://docs.google.com/document/d/1heYB1kZZD8M-LyiEM3uaQEP3kDw4rYnIq_1mrabZWBk/edit",
-      "purpose": "Understand the six models, investor principles and source hierarchy.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
+      "note": "Recovered from the 2026-10-03 saved corpus; original revision history was unavailable. Sheet edits do not automatically update the decision engine."
     },
     {
       "id": "formulas",
@@ -196,58 +181,26 @@
       "purpose": "Understand definitions and financial calculations.",
       "how": "Match formula IDs and input definitions to the implementation trace.",
       "status": "RECOVERED COPY VERIFIED",
-      "note": "Reconstructed from the 20 saved formula records, not the original specification Doc. No automatic engine update.",
-      "original_url": "https://docs.google.com/document/d/1C9JX-WOCLTe2m2WgqwjKDVXpF1G1gn_lw6OGq5nydJo/edit"
-    },
-    {
-      "id": "bibliography",
-      "group": "Evidence and documents",
-      "title": "Formal Bibliography v1.1",
-      "url": "https://docs.google.com/document/d/1-ncF9BSRfkjQd3MxjzZjEi4cvCJPfvBWD20PkVGZPY8/edit",
-      "purpose": "Find formal source references.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
-      "id": "bibtex",
-      "group": "Evidence and documents",
-      "title": "BibTeX corpus v1.1",
-      "url": "https://docs.google.com/document/d/1NXHu1MITr57Txcri_KSadHPakachg3Ptp3mvv1MHM-k/edit",
-      "purpose": "Reuse citation keys for research and reproducibility.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
+      "note": "Reconstructed from the 20 saved formula records, not the original specification Doc. No automatic engine update."
     },
     {
       "id": "archive",
-      "group": "Evidence and documents",
-      "title": "Source archive and snapshots",
+      "group": "Recovery records",
+      "title": "Preserved recovery package",
       "url": "https://drive.google.com/file/d/1S-kLr-gfo5tqkQ4iSeAg13uIkP_aaKQ2/view",
-      "purpose": "Find retained source evidence under the archive policy.",
-      "how": "Open recovered native files or download the preserved source ZIP.",
-      "status": "RECOVERY HOME VERIFIED",
-      "note": "New 09 recovery home. Original source archive files absent from the repositories remain unavailable.",
-      "original_url": "https://drive.google.com/drive/folders/1Ngsd9557CWnoyThsL7lLQokshK3coGGI"
-    },
-    {
-      "id": "handoff",
-      "group": "Evidence and documents",
-      "title": "Implementation handoff v1.1",
-      "url": "https://docs.google.com/document/d/1eCwWuGmdMQeq_9zvnDR-YgAz3rKINnPlJDxu78l9LA8/edit",
-      "purpose": "Read the implementation priorities and unresolved evidence gaps.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
+      "purpose": "Keep the archived recovery source available for traceability.",
+      "how": "Consult the ZIP for historical recovery evidence.",
+      "status": "HISTORICAL ARCHIVE",
+      "note": "Use the 09 working Drive folder for current documents."
     },
     {
       "id": "repo",
       "group": "Code and data definitions",
-      "title": "GitHub repository",
+      "title": "NPSE 09 GitHub repository",
       "url": "https://github.com/pailapilates09-sys/NPSE",
       "purpose": "Review or update the website, Python engine and versioned data definitions.",
       "how": "Read the README; inspect changes on a branch before production promotion.",
-      "status": "SOURCE CONTROL",
+      "status": "WORKING SOURCE",
       "note": "Private repository; existing GitHub account permissions apply."
     },
     {
@@ -297,8 +250,8 @@
       "url": "https://github.com/pailapilates09-sys/NPSE/blob/main/data/workspace-links.json",
       "purpose": "Keep these links, descriptions and statuses easy to update.",
       "how": "Edit this JSON in a reviewed code change; the site rebuilds the directory from it.",
-      "status": "DIRECTORY v1.1",
-      "note": "One maintained catalogue; no duplicated manual website link list."
+      "status": "DIRECTORY v1.2",
+      "note": "This file supplies the app directory and the Pages projection."
     },
     {
       "id": "neon",
@@ -307,27 +260,17 @@
       "url": "https://console.neon.tech",
       "purpose": "Inspect the deployed historical database and saved runs.",
       "how": "Sign in and choose the database linked to NPSE in Vercel; see How to use for read-only SQL.",
-      "status": "HOSTING MANAGEMENT NOT VERIFIED",
-      "note": "The existing public Vercel site remains reachable. The hosting management connection cannot locate its project on 2026-10-09; redeployment is not verified."
-    },
-    {
-      "id": "vercel",
-      "group": "Provider consoles",
-      "title": "Vercel NPSE project",
-      "url": "https://vercel.com/pailapilates10-1170/npse-control-tower",
-      "purpose": "Manage deployments, runtime logs, storage linkage and environment variables.",
-      "how": "Open the NPSE project with your authorized account; deploy code through GitHub.",
-      "status": "HOSTING MANAGEMENT NOT VERIFIED",
-      "note": "The existing public Vercel site remains reachable. The hosting management connection cannot locate its project on 2026-10-09; redeployment is not verified."
+      "status": "PROVIDER CONSOLE",
+      "note": "Check the research API for current database connectivity."
     },
     {
       "id": "actions",
       "group": "Provider consoles",
       "title": "Build and test runs",
       "url": "https://github.com/pailapilates09-sys/NPSE/actions",
-      "purpose": "Read the checks for a published change.",
+      "purpose": "Check the engine build and tests and the separate Pages publication run.",
       "how": "Open the workflow for the exact commit and check its conclusion.",
-      "status": "GITHUB CI",
+      "status": "GITHUB ACTIONS",
       "note": "Prior engine boundary passed 47 tests, including disposable Postgres."
     },
     {
@@ -351,26 +294,6 @@
       "note": "Separate from financial observation freshness."
     },
     {
-      "id": "local",
-      "group": "Governance and audit",
-      "title": "Project Local Library",
-      "url": "https://docs.google.com/spreadsheets/d/10y-CLrXZ8WFT2tgQFeQRKktmlChDTTLqe_ePQfIA8dQ/edit",
-      "purpose": "Find current code, lane records, lineage and project sync state.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
-      "id": "audit",
-      "group": "Governance and audit",
-      "title": "Audit Trail and reproduction",
-      "url": "https://drive.google.com/drive/folders/178MvwUR08TzZzy48OXAuQFmnTUoQd1Nu",
-      "purpose": "Find PRE/POST rollback evidence, QA receipts and checkpoints.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
       "id": "daily",
       "group": "Start here",
       "title": "Daily Evidence and five sources",
@@ -391,39 +314,9 @@
       "note": "Qualitative context is not a normalized financial observation."
     },
     {
-      "id": "a8-routing",
-      "group": "Governance and audit",
-      "title": "A8 command routing",
-      "url": "https://docs.google.com/document/d/1Eh97YjJCz2fsm0Xey4iGxuPBnJNXj8XlXnXUaXbl8vI/edit",
-      "purpose": "Read the active NPSE local execution and federation boundary.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
-      "id": "a8-control",
-      "group": "Governance and audit",
-      "title": "A8 Control Tower READ FIRST",
-      "url": "https://docs.google.com/document/d/1dp7hjsXA744IGn7FY7tPiua7EOnXam7wWdfwEGjovEI/edit",
-      "purpose": "Find adopted local controls and their source mappings.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
-      "id": "a8-rule",
-      "group": "Governance and audit",
-      "title": "A8 adopted library/storage control",
-      "url": "https://docs.google.com/document/d/1QJuDopuSHlWzx9IcV_x53pZEgqeFzHd0XqHFvrZ-wtE/edit",
-      "purpose": "Read evidence, structured-data ownership and closeout rules.",
-      "how": "Use the recovered references below; original authority still requires the original file.",
-      "status": "ORIGINAL NOT RECOVERED",
-      "note": "Historical original link retained for lineage. Its contents, approvals and revision history were not recovered into 09."
-    },
-    {
       "id": "recovered-npse_reference",
-      "group": "09 recovered files",
-      "title": "Recovered NPSE implementation reference",
+      "group": "Evidence and documents",
+      "title": "NPSE implementation reference",
       "url": "https://docs.google.com/document/d/12dxLTgYr8rWk94bDHQ7KBHyQOwE1uEGp6Rm-NEOhQb8/edit",
       "purpose": "Open the editable recovery reference and track remaining gaps.",
       "how": "Edit the native file in Google Drive. Website data and calculations use separately versioned code.",
@@ -432,13 +325,23 @@
     },
     {
       "id": "recovered-inventory",
-      "group": "09 recovered files",
+      "group": "Recovery records",
       "title": "09 recovery inventory",
       "url": "https://docs.google.com/spreadsheets/d/1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM/edit",
       "purpose": "Open the editable recovery reference and track remaining gaps.",
       "how": "Edit the native file in Google Drive. Website data and calculations use separately versioned code.",
       "status": "NATIVE COPY VERIFIED",
       "note": "Imported and provider-read on 2026-10-09; original approval history was unavailable."
+    },
+    {
+      "id": "branch-backups",
+      "group": "Recovery records",
+      "title": "NPSE original branch backups",
+      "url": "https://drive.google.com/drive/folders/1bsaxGcG6p7jrsHctIWgfxGjVGGG09kFt",
+      "purpose": "Find the archived ZIP copies of the original nine repository branches.",
+      "how": "Open the folder for a specific branch snapshot.",
+      "status": "HISTORICAL ARCHIVE",
+      "note": "Work from the 09 GitHub repository for current code."
     }
   ]
 }
