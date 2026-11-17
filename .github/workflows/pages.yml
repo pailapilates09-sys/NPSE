@@ -1,8 +1,10 @@
-name: Publish website
+name: Publish NPSE decisions
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "22 11 * * *"
 permissions:
   contents: read
   pages: write
@@ -21,12 +23,15 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - name: Prepare complete static website
+      - name: Stage the board and refresh the decision snapshot
         run: |
           mkdir "$RUNNER_TEMP/site"
           git archive HEAD:pages | tar -x -C "$RUNNER_TEMP/site"
           rm -rf "$RUNNER_TEMP/site/.github"
           touch "$RUNNER_TEMP/site/.nojekyll"
+          if ! python3 scripts/publish_decisions.py --output "$RUNNER_TEMP/site/data/decisions.json"; then
+            echo "::warning::Decision refresh failed; publishing the dated fallback. The board expires stale price decisions."
+          fi
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
           path: ${{ runner.temp }}/site

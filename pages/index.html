@@ -2,104 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>NPSE 09 · Investment research workspace</title>
-  <style>
-    :root{color-scheme:light;--ink:#17342e;--muted:#465c55;--green:#125f50;--line:#aac9bd;--paper:#fff;--wash:#f4f8f6}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--wash);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
-    main{max-width:65rem;margin:auto;padding:clamp(1.2rem,5vw,3rem);padding-bottom:4rem}
-    h1,h2,h3{line-height:1.2}
-    h1{font-size:clamp(2rem,5vw,3.7rem);margin:.4rem 0 .85rem}
-    h2{margin:2.5rem 0 .8rem}
-    p{margin:.5rem 0 1rem}
-    a{color:var(--green);text-underline-offset:.16em}
-    a:focus-visible{outline:3px solid #986300;outline-offset:4px}
-    .eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700;color:var(--green)}
-    .lede{max-width:66ch;font-size:1.12rem}
-    .actions{display:flex;gap:.65rem;flex-wrap:wrap;margin:1.25rem 0}
-    .button{padding:.65rem 1rem;border:1px solid var(--green);border-radius:.5rem;background:var(--paper);font-weight:650;text-decoration:none}
-    .button.primary{color:white;background:var(--green)}
-    .tree,.tree ul{list-style:none;margin:0;padding:0}
-    .tree{background:var(--paper);padding:1.2rem;border:1px solid var(--line);border-radius:.75rem}
-    .tree ul{border-left:2px solid var(--line);margin:.28rem 0 .6rem .2rem;padding-left:clamp(.7rem,3vw,1.2rem)}
-    .tree ul li{position:relative;padding:.25rem 0}
-    .tree ul li::before{content:"";position:absolute;top:1.02em;left:calc(-1 * clamp(.7rem,3vw,1.2rem));width:clamp(.42rem,2vw,.8rem);border-top:2px solid var(--line)}
-    .tree a{font-weight:650}
-    .tree small{display:block;color:var(--muted);font-size:.9rem}
-    .panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.8rem}
-    .panel{background:var(--paper);border:1px solid var(--line);border-radius:.7rem;padding:1rem}
-    .panel h3{margin:0 0 .45rem;font-size:1.03rem}
-    .panel p{margin:0;color:var(--muted)}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Buy, sell and why: an evidence-based decision board for Nepal-listed shares.">
+  <title>NPSE 09 | Buy, Sell, Why</title>
+  <link rel="stylesheet" href="./board.css">
+  <script src="./board.js" defer></script>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="eyebrow">NPSE 09 · Working project</p>
-      <h1>Find the companies worth researching.</h1>
-      <p class="lede">NPSE helps you decide which Nepal-listed companies deserve a closer look, what price and evidence would justify an entry, and what would change your mind. It separates business quality, valuation, timing and data confidence. An empty shortlist is a valid result when evidence is missing.</p>
-      <nav class="actions" aria-label="Start here">
-        <a class="button primary" href="https://npse-pailapilates09.vercel.app/">Open Decision Board</a>
-        <a class="button" href="./workspace/">Open 09 Workspace</a>
-        <a class="button" href="https://npse-pailapilates09.vercel.app/how-to">Learn the workflow</a>
-      </nav>
+  <main class="wrap">
+    <header class="mast">
+      <p class="mark"><span>NPSE</span> 09 <span class="divider" aria-hidden="true">/</span> NEPAL SHARES</p>
+      <p id="stamp" class="stamp">Reading the latest board…</p>
     </header>
-    <section id="operating-map" aria-labelledby="map-title">
-      <h2 id="map-title">How the project fits together</h2>
-      <ul class="tree">
-        <li><strong>NPSE 09</strong>
-          <ul>
-            <li><a href="https://github.com/pailapilates09-sys/NPSE">GitHub repository</a>
-              <small>Working source for the app, analysis rules and website.</small>
-              <ul>
-                <li><a href="https://github.com/pailapilates09-sys/NPSE/actions">Actions</a><small>One workflow builds and tests the engine; another publishes the Pages site.</small></li>
-                <li><a href="./">GitHub Pages</a><small>This operating map and the <a href="./workspace/">searchable 09 Workspace</a> are the stable entry points.</small></li>
-              </ul>
-            </li>
-            <li><a href="https://npse-pailapilates09.vercel.app/">Decision engine on Vercel</a>
-              <small>Runs the Decision Board, research pages and live API.</small>
-              <ul>
-                <li><a href="https://npse-pailapilates09.vercel.app/api/research">Research API</a><small>Reads Neon/PostgreSQL, which holds dated observations and saved research results.</small></li>
-              </ul>
-            </li>
-            <li><a href="https://drive.google.com/drive/folders/1UzBkzbPWxUbLaGD9fwVDS7y6tuazViLj">09 Google Drive</a>
-              <small>Working research folder for the source manifest, register, parsed rules, methods and implementation reference.</small>
-              <ul>
-                <li><a href="https://docs.google.com/spreadsheets/d/1lasY0fc-GliYLGQSMV5Zem8CosMddH0nHsEJEEICkdM/edit">Recovery inventory</a><small>Records where the recovered files came from.</small></li>
-                <li><a href="https://drive.google.com/drive/folders/1bsaxGcG6p7jrsHctIWgfxGjVGGG09kFt">Branch backup folder</a><small>ZIP copies of the original branches.</small></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">The decision board</p>
+      <h1 id="title">Buy, sell, <em>and why.</em></h1>
+      <p class="lead">See which shares meet the entry rules, when to review a holding for sale, and what evidence drives the decision.</p>
     </section>
-    <section aria-labelledby="panels-title">
-      <h2 id="panels-title">Why each page is here</h2>
-      <div class="panels">
-        <article class="panel">
-          <h3><a href="https://npse-pailapilates09.vercel.app/">Decision Board</a> and <a href="https://npse-pailapilates09.vercel.app/candidates">Candidates</a></h3>
-          <p>See up to three qualified companies and why each passes, waits or fails. Coverage and freshness panels show what evidence the shortlist is based on.</p>
-        </article>
-        <article class="panel">
-          <h3><a href="https://npse-pailapilates09.vercel.app/sectors">Sectors</a> and <a href="https://npse-pailapilates09.vercel.app/company/EBL">Company research</a></h3>
-          <p>Compare similar businesses. Company panels show bear, base and bull valuations when supported, along with evidence, entry conditions and what would invalidate a thesis.</p>
-        </article>
-        <article class="panel">
-          <h3><a href="https://npse-pailapilates09.vercel.app/daily">Daily Evidence</a>, <a href="https://npse-pailapilates09.vercel.app/sources">Sources</a> and <a href="https://npse-pailapilates09.vercel.app/methodology">Methodology</a></h3>
-          <p>Trace what changed and how the engine reached a result. Keep dated company events, source authority and calculation rules visible.</p>
-        </article>
-        <article class="panel">
-          <h3><a href="https://npse-pailapilates09.vercel.app/diagnostics">Diagnostics</a> and <a href="https://npse-pailapilates09.vercel.app/backtests">Backtests</a></h3>
-          <p>Inspect prices, volume, data gaps and test readiness separately from investment qualification.</p>
-        </article>
-        <article class="panel">
-          <h3><a href="https://npse-pailapilates09.vercel.app/how-to">How to use</a> and <a href="./workspace/">Workspace</a></h3>
-          <p>Learn the daily routine, export current evidence and find the working Drive files. Editing a research document does not change the board automatically.</p>
-        </article>
-      </div>
-    </section>
+
+    <div class="decision-grid">
+      <section class="panel" aria-labelledby="buy-title">
+        <p class="eyebrow"><span class="index">01</span> Entry</p>
+        <h2 id="buy-title">What to buy</h2>
+        <div id="buy" class="status" role="status">
+          <p class="status-name">Checking the board…</p>
+        </div>
+        <div id="qualified" class="cards"></div>
+        <div id="watch" class="watch" hidden>
+          <h3>Research first</h3>
+          <p class="muted">These companies cleared a preliminary screen. Check the filing and price before acting.</p>
+          <div id="watch-cards" class="cards"></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="sell-title">
+        <p class="eyebrow"><span class="index">02</span> Exit</p>
+        <h2 id="sell-title">When to sell</h2>
+        <label for="holding">Choose a share you hold</label>
+        <select id="holding" disabled>
+          <option value="">Select a ticker</option>
+        </select>
+        <div id="holding-detail" class="holding-detail" aria-live="polite">
+          <dl class="checks">
+            <div><dt>Sell review</dt><dd>New evidence undermines the reason you bought.</dd></div>
+            <div><dt>Trim review</dt><dd>The price passes a supported valuation or the position exceeds your own risk limit.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="panel why" aria-labelledby="why-title">
+        <p class="eyebrow"><span class="index">03</span> Evidence</p>
+        <h2 id="why-title">Why this decision</h2>
+        <div class="facts" id="facts" aria-live="polite">
+          <p>Decision evidence is loading.</p>
+        </div>
+        <p class="rule">An entry needs a recent <a href="https://www.nepalstock.com/today-price">official NEPSE quote</a>, supported financials and a price within the engine’s entry limit. Reported results alone don’t set a buy or sell price.</p>
+      </section>
+    </div>
+    <noscript><p class="notice">JavaScript is needed to show the latest decision snapshot and ticker-specific exit checks.</p></noscript>
   </main>
 </body>
 </html>
